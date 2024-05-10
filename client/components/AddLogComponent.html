@@ -1,0 +1,1018 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  AddLogComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/components/add-log/add-log.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                            <code>provideNativeDateAdapter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-log</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/PrimaryButtonComponent.html" target="_self" >PrimaryButtonComponent</a></code>
+                            <code>MatFormFieldModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>CommonModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatAutocompleteModule</code>
+                            <code>AsyncPipe</code>
+                            <code>MatSelectModule</code>
+                            <code>MatDatepickerModule</code>
+                            <code>NgxMaterialTimepickerModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-log.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./add-log.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#badKms" >badKms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isLater" >isLater</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#lastData" >lastData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#logDataForm" >logDataForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#maxDate" >maxDate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCancel" >onCancel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validateErrors" >validateErrors</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_formBuilder: FormBuilder, dialogRef: MatDialogRef<AddLogComponent>, lastData: literal type)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialogRef</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialogRef&lt;AddLogComponent&gt;</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>lastData</td>
+                                                  
+                                                        <td>
+                                                                    <code>literal type</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="41"
+                                    class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onCancel</b></span>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCancel()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateErrors"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>validateErrors</b></span>
+                        <a href="#validateErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateErrors()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="76"
+                                    class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="badKms"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>badKms</b></span>
+                        <a href="#badKms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isLater"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isLater</b></span>
+                        <a href="#isLater"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastData"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>lastData</b></span>
+                        <a href="#lastData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Inject(MAT_DIALOG_DATA)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logDataForm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>logDataForm</b></span>
+                        <a href="#logDataForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maxDate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>maxDate</b></span>
+                        <a href="#maxDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/admin/components/add-log/add-log.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AsyncPipe, CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, Inject, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { MatAutocompleteModule } from &#x27;@angular/material/autocomplete&#x27;;
+import { provideNativeDateAdapter } from &#x27;@angular/material/core&#x27;;
+import { MatDatepickerModule } from &#x27;@angular/material/datepicker&#x27;;
+import { MAT_DIALOG_DATA, MatDialogRef } from &#x27;@angular/material/dialog&#x27;;
+import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
+import { MatSelectModule } from &#x27;@angular/material/select&#x27;;
+import moment from &#x27;moment&#x27;;
+import { NgxMaterialTimepickerModule } from &#x27;ngx-material-timepicker&#x27;;
+import { PrimaryButtonComponent } from &#x27;src/app/shared&#x27;;
+
+@Component({
+  selector: &#x27;app-add-log&#x27;,
+  standalone: true,
+  imports: [
+    PrimaryButtonComponent, MatFormFieldModule, FormsModule,
+    ReactiveFormsModule, CommonModule, MatInputModule,
+    MatAutocompleteModule, AsyncPipe, MatSelectModule,
+    MatDatepickerModule, NgxMaterialTimepickerModule
+  ],
+  providers: [provideNativeDateAdapter()],
+  templateUrl: &#x27;./add-log.component.html&#x27;,
+  styleUrl: &#x27;./add-log.component.scss&#x27;
+})
+export class AddLogComponent implements OnInit {
+  public logDataForm!: FormGroup;
+  public maxDate: Date &#x3D; new Date();
+  public error &#x3D; false;
+  public isLater &#x3D; false;
+  public badKms &#x3D; false;
+
+  constructor(
+    private _formBuilder: FormBuilder,
+    private dialogRef: MatDialogRef&lt;AddLogComponent&gt;,
+    @Inject(MAT_DIALOG_DATA) public lastData: { lastKms: number, lastTime: string }
+  ) { }
+
+  ngOnInit(): void {
+    this.logDataForm &#x3D; this._formBuilder.group({
+      Kilometraje_Entrada: [this.lastData.lastKms, [Validators.required]],
+      Kilometraje_Salida: [this.lastData.lastKms, [Validators.required]],
+      Hora_Salida: [this.lastData.lastTime, [Validators.required]],
+      Hora_Entrada: [&#x27;&#x27;, [Validators.required]],
+      Fecha: [&#x27;&#x27;, [Validators.required]],
+      Destino: [&#x27;&#x27;, [Validators.required]],
+      Observaciones: [&#x27;&#x27;]
+    });
+  }
+
+  public onCancel(): void {
+    this.dialogRef.close(false);
+  }
+
+  public onSubmit(): void {
+    if(!this.validateErrors()) {
+      return;
+    }
+
+    const data &#x3D; {
+      ID_Bitacora: 0,
+      Fecha: this.logDataForm.controls.Fecha.value,
+      Destino: this.logDataForm.controls.Destino.value,
+      Kilometraje_Entrada: this.logDataForm.controls.Kilometraje_Entrada.value,
+      Kilometraje_Salida: this.logDataForm.controls.Kilometraje_Salida.value,
+      Hora_Salida: moment.utc(this.logDataForm.controls.Hora_Salida.value, &#x27;h:mm A&#x27;).format(&#x27;HH:mm:ss&#x27;),
+      Hora_Entrada: moment.utc(this.logDataForm.controls.Hora_Entrada.value, &#x27;h:mm A&#x27;).format(&#x27;HH:mm:ss&#x27;),
+      Observaciones: this.logDataForm.controls.Observaciones.value
+    };
+
+    this.dialogRef.close(data);
+  }
+
+  private validateErrors(): boolean {
+    this.error &#x3D; false;
+    this.isLater &#x3D; false;
+    this.badKms &#x3D; false;
+    let valid &#x3D; true;
+
+    if (this.logDataForm.invalid) {
+      this.error &#x3D; true;
+      valid &#x3D; false;
+    }
+
+    if (this.logDataForm.controls.Kilometraje_Entrada.value &lt; this.logDataForm.controls.Kilometraje_Salida.value) {
+      this.badKms &#x3D; true;
+      valid &#x3D; false;
+    }
+
+    const timeFormat &#x3D; &#x27;h:mm A&#x27;;
+    const exitTime &#x3D; this.logDataForm.controls.Hora_Salida.value;
+    const entryTime &#x3D; this.logDataForm.controls.Hora_Entrada.value;
+    if (moment(entryTime, timeFormat).isBefore(moment(exitTime, timeFormat))) {
+      this.isLater &#x3D; true;
+      valid &#x3D; false;
+    }
+
+    return valid;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;logDataForm&quot; class&#x3D;&quot;log-form&quot;&gt;
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Fecha&lt;/mat-label&gt;
+      &lt;input formControlName&#x3D;&quot;Fecha&quot; matInput [max]&#x3D;&quot;maxDate&quot; [matDatepicker]&#x3D;&quot;picker&quot; required&gt;
+      &lt;mat-hint&gt;DD/MM/YYYY&lt;/mat-hint&gt;
+      &lt;mat-datepicker-toggle matIconSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+      &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Destino&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        required
+        class&#x3D;&quot;input&quot;
+        formControlName&#x3D;&quot;Destino&quot;
+      &gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;input
+        matInput
+        required
+        readonly
+        placeholder&#x3D;&quot;Hora Salida&quot;
+        class&#x3D;&quot;input pointer&quot;
+        formControlName&#x3D;&quot;Hora_Salida&quot;
+        [ngxTimepicker]&#x3D;&quot;timeIn&quot;
+      &gt;
+      &lt;ngx-material-timepicker #timeIn&gt;&lt;/ngx-material-timepicker&gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;input
+        matInput
+        required
+        readonly
+        placeholder&#x3D;&quot;Hora Entrada&quot;
+        class&#x3D;&quot;input&quot;
+        formControlName&#x3D;&quot;Hora_Entrada&quot;
+        [ngxTimepicker]&#x3D;&quot;timeOut&quot;
+      &gt;
+      &lt;ngx-material-timepicker #timeOut&gt;&lt;/ngx-material-timepicker&gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Kilometraje Salida&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        required
+        [min]&#x3D;&quot;this.lastData.lastKms&quot;
+        type&#x3D;&quot;number&quot;
+        class&#x3D;&quot;input&quot;
+        formControlName&#x3D;&quot;Kilometraje_Salida&quot;
+      &gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Kilometraje Entrada&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        [min]&#x3D;&quot;this.lastData.lastKms&quot;
+        required
+        type&#x3D;&quot;number&quot;
+        class&#x3D;&quot;input&quot;
+        formControlName&#x3D;&quot;Kilometraje_Entrada&quot;
+      &gt;
+    &lt;/mat-form-field&gt;
+
+    &lt;mat-form-field class&#x3D;&quot;create-field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Observaciones&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        class&#x3D;&quot;input&quot;
+        formControlName&#x3D;&quot;Observaciones&quot;
+      &gt;
+    &lt;/mat-form-field&gt;
+  &lt;/form&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;isLater&quot;&gt;La hora de entrada no puede ser anterior a la de salida&lt;/mat-error&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;error&quot;&gt;Llene todos los campos requeridos&lt;/mat-error&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;badKms&quot;&gt;El kilometraje entrada debe ser mayor al de salida&lt;/mat-error&gt;
+  &lt;div class&#x3D;&quot;buttons&quot;&gt;
+    &lt;app-primary-button styleClass&#x3D;&quot;btn-red&quot; class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;onCancel()&quot;&gt;Cancelar&lt;/app-primary-button&gt;
+    &lt;app-primary-button class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;onSubmit()&quot;&gt;Añadir&lt;/app-primary-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <form [formGroup]="logDataForm" class="log-form">    <mat-form-field class="create-field">      <mat-label class="label">Fecha</mat-label>      <input formControlName="Fecha" matInput [max]="maxDate" [matDatepicker]="picker" required>      <mat-hint>DD/MM/YYYY</mat-hint>      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>      <mat-datepicker #picker></mat-datepicker>    </mat-form-field>    <mat-form-field class="create-field">      <mat-label class="label">Destino</mat-label>      <input        matInput        required        class="input"        formControlName="Destino"      >    </mat-form-field>    <mat-form-field class="create-field">      <input        matInput        required        readonly        placeholder="Hora Salida"        class="input pointer"        formControlName="Hora_Salida"        [ngxTimepicker]="timeIn"      >      <ngx-material-timepicker #timeIn></ngx-material-timepicker>    </mat-form-field>    <mat-form-field class="create-field">      <input        matInput        required        readonly        placeholder="Hora Entrada"        class="input"        formControlName="Hora_Entrada"        [ngxTimepicker]="timeOut"      >      <ngx-material-timepicker #timeOut></ngx-material-timepicker>    </mat-form-field>    <mat-form-field class="create-field">      <mat-label class="label">Kilometraje Salida</mat-label>      <input        matInput        required        [min]="this.lastData.lastKms"        type="number"        class="input"        formControlName="Kilometraje_Salida"      >    </mat-form-field>    <mat-form-field class="create-field">      <mat-label class="label">Kilometraje Entrada</mat-label>      <input        matInput        [min]="this.lastData.lastKms"        required        type="number"        class="input"        formControlName="Kilometraje_Entrada"      >    </mat-form-field>    <mat-form-field class="create-field">      <mat-label class="label">Observaciones</mat-label>      <input        matInput        class="input"        formControlName="Observaciones"      >    </mat-form-field>  </form>  <mat-error class="error" *ngIf="isLater">La hora de entrada no puede ser anterior a la de salida</mat-error>  <mat-error class="error" *ngIf="error">Llene todos los campos requeridos</mat-error>  <mat-error class="error" *ngIf="badKms">El kilometraje entrada debe ser mayor al de salida</mat-error>  <div class="buttons">    <app-primary-button styleClass="btn-red" class="btn" (btnClick)="onCancel()">Cancelar</app-primary-button>    <app-primary-button class="btn" (btnClick)="onSubmit()">Añadir</app-primary-button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddLogComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddLogComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

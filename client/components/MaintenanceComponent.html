@@ -1,0 +1,979 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  MaintenanceComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/containers/maintenance/maintenance.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-maintenance</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/VehicleCardComponent.html" target="_self" >VehicleCardComponent</a></code>
+                                <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                                <code><a href="../components/PrimaryButtonComponent.html" target="_self" >PrimaryButtonComponent</a></code>
+                                <code><a href="../components/NoResultComponent.html" target="_self" >NoResultComponent</a></code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./maintenance.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./maintenance.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredVehicles" >filteredVehicles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lastMonthMaintenanceVehicles" >lastMonthMaintenanceVehicles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#searchInput" >searchInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicles" >vehicles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getAllVehicles" >getAllVehicles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getVehiclesMaintenancesLastMonth" >getVehiclesMaintenancesLastMonth</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSearch" >onSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openCreateMaintenanceModal" >openCreateMaintenanceModal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(searchEngine: <a href="../injectables/SearchService.html" target="_self">SearchService</a>, vehicleQuery: <a href="../injectables/VehicleQueries.html" target="_self">VehicleQueries</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>searchEngine</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>vehicleQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/VehicleQueries.html" target="_self" >VehicleQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllVehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getAllVehicles</b></span>
+                        <a href="#getAllVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllVehicles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getVehiclesMaintenancesLastMonth"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getVehiclesMaintenancesLastMonth</b></span>
+                        <a href="#getVehiclesMaintenancesLastMonth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getVehiclesMaintenancesLastMonth()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="65"
+                                    class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="36"
+                                    class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>onSearch</b></span>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSearch(term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>term</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openCreateMaintenanceModal"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openCreateMaintenanceModal</b></span>
+                        <a href="#openCreateMaintenanceModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openCreateMaintenanceModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="55"
+                                    class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredVehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredVehicles</b></span>
+                        <a href="#filteredVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastMonthMaintenanceVehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>lastMonthMaintenanceVehicles</b></span>
+                        <a href="#lastMonthMaintenanceVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchInput"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>searchInput</b></span>
+                        <a href="#searchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicles</b></span>
+                        <a href="#vehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/admin/containers/maintenance/maintenance.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { LoadingComponent, PrimaryButtonComponent, NoResultComponent, VehicleCardComponent } from &#x27;src/app/shared&#x27;;
+import { SearchService } from &#x27;src/app/core/services&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { Model } from &#x27;src/app/core/enums&#x27;;
+import { CreateMaintenanceComponent } from &#x27;../../components&#x27;;
+import { VehicleQueries } from &#x27;../../services&#x27;;
+import { IVehicle } from &#x27;../../interfaces&#x27;;
+
+@Component({
+  selector: &#x27;app-maintenance&#x27;,
+  standalone: true,
+  imports: [
+    VehicleCardComponent, LoadingComponent,
+    CommonModule, FormsModule, PrimaryButtonComponent,
+    NoResultComponent
+  ],
+  templateUrl: &#x27;./maintenance.component.html&#x27;,
+  styleUrl: &#x27;./maintenance.component.scss&#x27;
+})
+export class MaintenanceComponent implements OnInit {
+  public loading &#x3D; true;
+  public searchInput &#x3D; &#x27;&#x27;;
+  public vehicles: IVehicle[] &#x3D; [];
+  public filteredVehicles: IVehicle[] &#x3D; [];
+  public lastMonthMaintenanceVehicles &#x3D; 0;
+
+  constructor(
+    private searchEngine: SearchService,
+    private vehicleQuery: VehicleQueries,
+    private dialog: MatDialog
+  ){}
+
+  ngOnInit(): void {
+    this.getAllVehicles();
+  }
+
+  public onSearch(term: string): void {
+    this.filteredVehicles &#x3D; this.searchEngine.filterData(this.vehicles, term, Model.vehicle);
+  }
+
+  private getAllVehicles(): void {
+    this.vehicleQuery.getAllVehicles().subscribe(({data}) &#x3D;&gt; {
+      if(data){
+        this.vehicles &#x3D; data;
+        this.filteredVehicles &#x3D; this.vehicles;
+        this.loading &#x3D; false;
+        this.getVehiclesMaintenancesLastMonth();
+      }
+    });
+  }
+
+  public openCreateMaintenanceModal(): void {
+    this.dialog.open(CreateMaintenanceComponent, {
+      panelClass: &#x27;dialog-style&#x27;
+    }).afterClosed().subscribe((result) &#x3D;&gt; {
+      if(result) {
+        this.getAllVehicles();
+      }
+    });
+  }
+
+  private getVehiclesMaintenancesLastMonth(): void {
+    const currentDate &#x3D; new Date();
+    const firstDayOfMonth &#x3D; new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const lastDayOfMonth &#x3D; new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    this.lastMonthMaintenanceVehicles &#x3D;  this.vehicles.filter(vehicle &#x3D;&gt;
+      vehicle?.Mantenimientos?.some(mantenimiento &#x3D;&gt; {
+        const mantenimientoDate &#x3D; new Date(mantenimiento.Fecha);
+        return mantenimientoDate &gt;&#x3D; firstDayOfMonth &amp;&amp; mantenimientoDate &lt;&#x3D; lastDayOfMonth;
+      })
+    ).length;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-loading class&#x3D;&quot;loading&quot; *ngIf&#x3D;&quot;loading&quot;&gt;&lt;/app-loading&gt;
+
+&lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;!loading&quot;&gt;
+  &lt;section class&#x3D;&quot;panel&quot;&gt;
+    &lt;div class&#x3D;&quot;search-bar-wrapper&quot;&gt;
+      &lt;i class&#x3D;&quot;uil uil-search-alt&quot;&gt;&lt;/i&gt;
+      &lt;input
+        [(ngModel)]&#x3D;&quot;searchInput&quot;
+        class&#x3D;&quot;search-bar&quot;
+        (input)&#x3D;&quot;onSearch(searchInput)&quot;
+        type&#x3D;&quot;text&quot;
+        placeholder&#x3D;&quot;Buscar&quot;
+      /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;available&quot;&gt;
+      &lt;p class&#x3D;&quot;panel-title&quot;&gt;Vehículos con mantenimiento este mes&lt;/p&gt;
+      &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ lastMonthMaintenanceVehicles }}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;buttons&quot;&gt;
+      &lt;app-primary-button class&#x3D;&quot;button&quot; (btnClick)&#x3D;&quot;openCreateMaintenanceModal()&quot;&gt;
+        AGREGAR MANTENIMIENTO
+      &lt;/app-primary-button&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class&#x3D;&quot;cards-container&quot;&gt;
+    @for(vehicle of filteredVehicles; track vehicle.ID_Vehiculo) {
+      &lt;app-vehicle-card
+        type&#x3D;&quot;maintenance&quot;
+        [vehicle]&#x3D;&quot;vehicle&quot;
+        class&#x3D;&quot;pointer&quot;
+      &gt;
+      &lt;/app-vehicle-card&gt;
+    } @empty {
+      &lt;app-no-result&gt;&lt;/app-no-result&gt;
+    }
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-loading class="loading" *ngIf="loading"></app-loading><div class="container" *ngIf="!loading">  <section class="panel">    <div class="search-bar-wrapper">      <i class="uil uil-search-alt"></i>      <input        [(ngModel)]="searchInput"        class="search-bar"        (input)="onSearch(searchInput)"        type="text"        placeholder="Buscar"      />    </div>    <div class="available">      <p class="panel-title">Vehículos con mantenimiento este mes</p>      <p class="panel-label">{{ lastMonthMaintenanceVehicles }}</p>    </div>    <div class="buttons">      <app-primary-button class="button" (btnClick)="openCreateMaintenanceModal()">        AGREGAR MANTENIMIENTO      </app-primary-button>    </div>  </section>  <section class="cards-container">    @for(vehicle of filteredVehicles; track vehicle.ID_Vehiculo) {      <app-vehicle-card        type="maintenance"        [vehicle]="vehicle"        class="pointer"      >      </app-vehicle-card>    } @empty {      <app-no-result></app-no-result>    }  </section></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MaintenanceComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MaintenanceComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

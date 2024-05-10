@@ -1,0 +1,2890 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CreateLogComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/containers/create-log/create-log.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                            <code>provideNativeDateAdapter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-create-log</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/PrimaryButtonComponent.html" target="_self" >PrimaryButtonComponent</a></code>
+                            <code>MatFormFieldModule</code>
+                            <code>FormsModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>CommonModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatAutocompleteModule</code>
+                            <code>AsyncPipe</code>
+                            <code>MatSelectModule</code>
+                            <code>MatTableModule</code>
+                                <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+                            <code>NgxPaginationModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./create-log.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./create-log.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cities" >cities</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentKm" >currentKm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentTime" >currentTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayedColumns" >displayedColumns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#drivers" >drivers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredCities" >filteredCities</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredDrivers" >filteredDrivers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredVehicles" >filteredVehicles</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#logForm" >logForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#logs" >logs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#page" >page</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#readonly" >readonly</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedCity" >selectedCity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedDriver" >selectedDriver</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedVehicle" >selectedVehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showTable" >showTable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#table" >table</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicle" >vehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicleInfoHelper" >vehicleInfoHelper</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicles" >vehicles</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fillForm" >fillForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formatDate" >formatDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#formatTime" >formatTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hasGasRefill" >hasGasRefill</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#hasPassengers" >hasPassengers</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openGasInfo" >openGasInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openLogModal" >openLogModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#openPassengerModal" >openPassengerModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#removeLog" >removeLog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#return" >return</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectCity" >selectCity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectDriver" >selectDriver</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectVehicle" >selectVehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showLogTable" >showLogTable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#startAutocomplete" >startAutocomplete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(vehicleInfoHelper: <a href="../classes/vehicleInfoHelper.html" target="_self">vehicleInfoHelper</a>, _formBuilder: FormBuilder, vehicleQuery: <a href="../injectables/VehicleQueries.html" target="_self">VehicleQueries</a>, driverQuery: <a href="../injectables/DriverQueries.html" target="_self">DriverQueries</a>, searchEngine: <a href="../injectables/SearchService.html" target="_self">SearchService</a>, route: ActivatedRoute, location: Location, logMutation: <a href="../injectables/LogsMutations.html" target="_self">LogsMutations</a>, router: Router, toaster: ToastrService, cookieHelper: <a href="../classes/cookieHelper.html" target="_self">cookieHelper</a>, dialog: MatDialog, publicQuery: <a href="../injectables/PublicQueries.html" target="_self">PublicQueries</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>vehicleInfoHelper</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>vehicleQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/VehicleQueries.html" target="_self" >VehicleQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>driverQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DriverQueries.html" target="_self" >DriverQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>searchEngine</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>location</td>
+                                                  
+                                                        <td>
+                                                                    <code>Location</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logMutation</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogsMutations.html" target="_self" >LogsMutations</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toaster</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastrService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cookieHelper</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/cookieHelper.html" target="_self" >cookieHelper</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>publicQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PublicQueries.html" target="_self" >PublicQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fetchData</b></span>
+                        <a href="#fetchData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="249"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:249</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fillForm"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fillForm</b></span>
+                        <a href="#fillForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fillForm()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="290"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:290</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatDate"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>formatDate</b></span>
+                        <a href="#formatDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>formatDate(date: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="115"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>date</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="formatTime"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>formatTime</b></span>
+                        <a href="#formatTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>formatTime(time: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="119"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:119</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>time</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasGasRefill"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hasGasRefill</b></span>
+                        <a href="#hasGasRefill"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hasGasRefill(log: <a href="../interfaces/ILog.html" target="_self">ILog</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="123"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:123</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>log</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasPassengers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>hasPassengers</b></span>
+                        <a href="#hasPassengers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>hasPassengers(log: <a href="../interfaces/ILog.html" target="_self">ILog</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="127"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:127</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>log</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="81"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="195"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:195</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openGasInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openGasInfo</b></span>
+                        <a href="#openGasInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openGasInfo(log: <a href="../interfaces/ILog.html" target="_self">ILog</a>, modalType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="181"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:181</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>log</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>modalType</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;create&#x27;</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openLogModal"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openLogModal</b></span>
+                        <a href="#openLogModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openLogModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openPassengerModal"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>openPassengerModal</b></span>
+                        <a href="#openPassengerModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openPassengerModal(log: <a href="../interfaces/ILog.html" target="_self">ILog</a>, modalType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Default value</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>log</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                                <td>modalType</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+                                            <td>
+                                                    <code>&#x27;create&#x27;</code>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeLog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>removeLog</b></span>
+                        <a href="#removeLog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>removeLog(removedLog: <a href="../interfaces/ILog.html" target="_self">ILog</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="170"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:170</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>removedLog</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="return"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>return</b></span>
+                        <a href="#return"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>return()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCity"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectCity</b></span>
+                        <a href="#selectCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectCity(city: <a href="../interfaces/ICity.html" target="_self">ICity</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>city</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ICity.html" target="_self" >ICity</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectDriver"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectDriver</b></span>
+                        <a href="#selectDriver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectDriver(driver: <a href="../interfaces/IDriver.html" target="_self">IDriver</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="111"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:111</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>driver</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IDriver.html" target="_self" >IDriver</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectVehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectVehicle</b></span>
+                        <a href="#selectVehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectVehicle(vehicle: <a href="../interfaces/IVehicle.html" target="_self">IVehicle</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>vehicle</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showLogTable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showLogTable</b></span>
+                        <a href="#showLogTable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>showLogTable()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="135"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:135</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startAutocomplete"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>startAutocomplete</b></span>
+                        <a href="#startAutocomplete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>startAutocomplete()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="275"
+                                    class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:275</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cities"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cities</b></span>
+                        <a href="#cities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#City" target="_self" >ICity[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentKm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentKm</b></span>
+                        <a href="#currentKm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentTime"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentTime</b></span>
+                        <a href="#currentTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date().toLocaleTimeString()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>displayedColumns</b></span>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>TABLE_COLUMNS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drivers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>drivers</b></span>
+                        <a href="#drivers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IDriver.html" target="_self" >IDriver[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredCities"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredCities</b></span>
+                        <a href="#filteredCities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#City" target="_self" >Observable&lt;ICity[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredDrivers"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredDrivers</b></span>
+                        <a href="#filteredDrivers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IDriver.html" target="_self" >Observable&lt;IDriver[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredVehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredVehicles</b></span>
+                        <a href="#filteredVehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >Observable&lt;IVehicle[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:56</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logForm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>logForm</b></span>
+                        <a href="#logForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logs"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>logs</b></span>
+                        <a href="#logs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ILog.html" target="_self" >ILog[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="page"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>page</b></span>
+                        <a href="#page"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>1</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="readonly"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>readonly</b></span>
+                        <a href="#readonly"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCity"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedCity</b></span>
+                        <a href="#selectedCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICity.html" target="_self" >ICity</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_CITY</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedDriver"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedDriver</b></span>
+                        <a href="#selectedDriver"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IDriver.html" target="_self" >IDriver</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_DRIVER</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:53</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedVehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedVehicle</b></span>
+                        <a href="#selectedVehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_VEHICLE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showTable"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showTable</b></span>
+                        <a href="#showTable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="table"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>table</b></span>
+                        <a href="#table"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatTable&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(MatTable)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicle</b></span>
+                        <a href="#vehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_VEHICLE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicleInfoHelper"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicleInfoHelper</b></span>
+                        <a href="#vehicleInfoHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicles"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicles</b></span>
+                        <a href="#vehicles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/admin/containers/create-log/create-log.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { cookieHelper, EMPTY_CITY, EMPTY_DRIVER, EMPTY_VEHICLE } from &#x27;src/app/core/helpers&#x27;;
+import { LoadingComponent, PrimaryButtonComponent } from &#x27;src/app/shared&#x27;;
+import { CommonModule, AsyncPipe, Location } from &#x27;@angular/common&#x27;;
+import { MatAutocompleteModule } from &#x27;@angular/material/autocomplete&#x27;;
+import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
+import { MatSelectModule } from &#x27;@angular/material/select&#x27;;
+import { provideNativeDateAdapter } from &#x27;@angular/material/core&#x27;;
+import { map, Observable, startWith } from &#x27;rxjs&#x27;;
+import { SearchService } from &#x27;src/app/core/services&#x27;;
+import { Model } from &#x27;src/app/core/enums&#x27;;
+import { MatTable, MatTableModule } from &#x27;@angular/material/table&#x27;;
+import moment from &#x27;moment&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { NgxPaginationModule } from &#x27;ngx-pagination&#x27;;
+import { ToastrService } from &#x27;ngx-toastr&#x27;;
+import { PublicQueries } from &#x27;src/app/public/services&#x27;;
+import { DriverQueries, LogsMutations, VehicleQueries } from &#x27;../../services&#x27;;
+import { vehicleInfoHelper } from &#x27;../../helpers&#x27;;
+import { exportData, FuesWithLog, ICity, IDriver, IGasRefill, ILog, IVehicle } from &#x27;../../interfaces&#x27;;
+import { AddLogComponent, GasInfoComponent, ShowAddPassengersComponent } from &#x27;../../components&#x27;;
+
+const TABLE_COLUMNS &#x3D; [
+  &#x27;date&#x27;  ,&#x27;destination&#x27;, &#x27;timeOut&#x27;, &#x27;timeIn&#x27;, &#x27;kmsOut&#x27;, &#x27;kmsIn&#x27;, &#x27;gas&#x27;, &#x27;passengers&#x27;, &#x27;observation&#x27;,&#x27;delete&#x27;
+];
+@Component({
+  selector: &#x27;app-create-log&#x27;,
+  standalone: true,
+  imports: [
+    PrimaryButtonComponent, MatFormFieldModule, FormsModule,
+    ReactiveFormsModule, CommonModule, MatInputModule,
+    MatAutocompleteModule, AsyncPipe, MatSelectModule,
+    MatTableModule, LoadingComponent, NgxPaginationModule
+  ],
+  providers: [vehicleInfoHelper, provideNativeDateAdapter()],
+  templateUrl: &#x27;./create-log.component.html&#x27;,
+  styleUrl: &#x27;./create-log.component.scss&#x27;
+})
+export class CreateLogComponent implements OnInit {
+  public logForm!: FormGroup;
+  public vehicles: IVehicle[] &#x3D; [];
+  public filteredVehicles!: Observable&lt;IVehicle[]&gt;;
+  public selectedVehicle: IVehicle &#x3D; EMPTY_VEHICLE;
+  public selectedCity: ICity &#x3D; EMPTY_CITY;
+  public drivers: IDriver[] &#x3D; [];
+  public logs: ILog[] &#x3D; [];
+  public cities: ICity[] &#x3D; [];
+  public filteredCities!: Observable&lt;ICity[]&gt;;
+  public filteredDrivers!: Observable&lt;IDriver[]&gt;;
+  public selectedDriver: IDriver &#x3D; EMPTY_DRIVER;
+  public displayedColumns: string[] &#x3D; TABLE_COLUMNS;
+  public readonly &#x3D; false;
+  public loading &#x3D; false;
+  public showTable &#x3D; false;
+  public error &#x3D; false;
+  public currentKm &#x3D; 0;
+  public currentTime &#x3D; new Date().toLocaleTimeString();
+  public vehicle: IVehicle &#x3D; EMPTY_VEHICLE;
+  public page &#x3D; 1;
+  @ViewChild(MatTable) table!: MatTable&lt;any&gt;;
+
+  constructor(
+    public vehicleInfoHelper: vehicleInfoHelper,
+    private _formBuilder: FormBuilder,
+    private vehicleQuery: VehicleQueries,
+    private driverQuery: DriverQueries,
+    private searchEngine: SearchService,
+    private route: ActivatedRoute,
+    private location: Location,
+    private logMutation: LogsMutations,
+    private router: Router,
+    private toaster: ToastrService,
+    private cookieHelper: cookieHelper,
+    private dialog: MatDialog,
+    private publicQuery: PublicQueries
+  ){}
+
+  ngOnInit(): void {
+    this.logForm &#x3D; this._formBuilder.group({
+      vehicle: [&#x27;&#x27;, [Validators.required]],
+      driver: [&#x27;&#x27;, [Validators.required]],
+      city: [&#x27;&#x27;, [Validators.required]]
+    });
+    this.fetchData();
+    this.startAutocomplete();
+  }
+
+  public selectVehicle(vehicle: IVehicle): void {
+    this.selectedVehicle &#x3D; vehicle;
+    this.currentKm &#x3D; vehicle.Kilometraje;
+  }
+
+  public selectCity(city: ICity): void {
+    this.selectedCity &#x3D; city;
+  }
+
+  public openPassengerModal(log: ILog, modalType &#x3D; &#x27;create&#x27;): void {
+    this.dialog.open(ShowAddPassengersComponent, {
+      panelClass: &#x27;dialog-style&#x27;,
+      data: { passengers: log.Pasajeros, modalType: modalType }
+    }).afterClosed().subscribe((result) &#x3D;&gt; {
+      if(result) {
+        log.Pasajeros &#x3D; result;
+      }
+    });
+  }
+
+  public selectDriver(driver: IDriver): void {
+    this.selectedDriver &#x3D; driver;
+  }
+
+  public formatDate(date: string): string {
+    return moment.utc(date).format(&#x27;DD/MM/YYYY&#x27;);
+  }
+
+  public formatTime(time: string): string {
+    return moment.utc(time, &#x27;HH:mm:ss&#x27;).format(&#x27;hh:mm A&#x27;);
+  }
+
+  public hasGasRefill(log: ILog): boolean {
+    return log.Llenados_Combustible.length &gt; 0 ? true : false;
+  }
+
+  public hasPassengers(log: ILog): boolean {
+    return log.Pasajeros.length &gt; 0 ? true : false;
+  }
+
+  public return(): void {
+    this.location.back();
+  }
+
+  public showLogTable(): void {
+    if(this.logForm.invalid) {
+      this.error &#x3D; true;
+      return;
+    }
+
+    this.showTable &#x3D; true;
+    this.error &#x3D; false;
+  }
+
+  public openLogModal(): void {
+    this.dialog.open(AddLogComponent, {
+      maxWidth: &#x27;100%&#x27;,
+      panelClass: &#x27;dialog-style&#x27;,
+      data: {
+        lastKms: this.currentKm,
+        lastTime: moment(this.currentTime, &#x27;hh:mm:ss A&#x27;).format(&#x27;hh:mm A&#x27;)
+      }
+    }).afterClosed().subscribe((log) &#x3D;&gt; {
+      if(!log) {
+        return;
+      }
+      const formattedLog &#x3D; log as ILog;
+      formattedLog.Llenados_Combustible &#x3D; [];
+      formattedLog.Pasajeros &#x3D; &#x27;&#x27;;
+      formattedLog.Conductor &#x3D; this.selectedDriver;
+      formattedLog.Vehiculo &#x3D; this.selectedVehicle;
+      formattedLog.Ciudad &#x3D; this.selectedCity;
+      this.logs.push(formattedLog);
+      this.currentTime &#x3D; formattedLog.Hora_Entrada.toString();
+      this.currentKm &#x3D; formattedLog.Kilometraje_Entrada;
+      this.table.renderRows();
+    });
+  }
+
+  public removeLog(removedLog: ILog): void {
+    this.logs &#x3D; this.logs.filter(log &#x3D;&gt; log !&#x3D;&#x3D; removedLog);
+    const lastLog &#x3D; this.logs[this.logs.length - 1];
+
+    if(this.logs.length &gt; 0) {
+      this.currentTime &#x3D; lastLog.Hora_Entrada.toString();
+      this.currentKm &#x3D; lastLog.Kilometraje_Entrada;
+    }
+    this.table.renderRows();
+  }
+
+  public openGasInfo(log: ILog, modalType &#x3D; &#x27;create&#x27;): void {
+    this.dialog.open(GasInfoComponent, {
+      panelClass: &#x27;dialog-style&#x27;,
+      data: { log, modalType }
+    }).afterClosed().subscribe((gas) &#x3D;&gt; {
+      if(!gas) {
+        return;
+      }
+      const formattedGas &#x3D; gas as IGasRefill;
+      log.Llenados_Combustible.push(formattedGas);
+      this.table.renderRows();
+    });
+  }
+
+  public async onSubmit(): Promise&lt;void&gt; {
+    if( this.logs.length &#x3D;&#x3D;&#x3D; 0 ) {
+      this.toaster.error(&#x27;No se han agregado registros&#x27;, &#x27;Error&#x27;);
+      return;
+    }
+
+    this.loading &#x3D; true;
+    const refills: FuesWithLog[] &#x3D; [];
+    const exportingLogs: any[] &#x3D; [];
+
+    this.logs.forEach(log &#x3D;&gt; {
+      const formattedLogs &#x3D; {
+        ID_Vehiculo: log.Vehiculo.ID_Vehiculo,
+        ID_Conductor: log.Conductor.ID_Conductor,
+        Kilometraje_Entrada: log.Kilometraje_Entrada,
+        Kilometraje_Salida: log.Kilometraje_Salida,
+        Destino: log.Destino,
+        Hora_Salida: moment.utc(log.Hora_Salida, &#x27;hh:mm:ss&#x27;).toISOString(),
+        Hora_Entrada: moment.utc(log.Hora_Entrada, &#x27;hh:mm:ss&#x27;).toISOString(),
+        Fecha: log.Fecha,
+        Observaciones: log.Observaciones,
+        Pasajeros: log.Pasajeros,
+        ID_Ciudad: 1
+      };
+      exportingLogs.push(this.cookieHelper.dataToSend(formattedLogs));
+
+      if (log.Llenados_Combustible.length &gt; 0) {
+        const refill &#x3D; log.Llenados_Combustible[0];
+        const extractedRefills: FuesWithLog &#x3D; {
+          ID_Vehiculo: this.selectedVehicle.ID_Vehiculo,
+          Kilometraje_Vehiculo: log.Kilometraje_Entrada,
+          Cantidad: refill.Cantidad,
+          Estacion_Combustible: refill.Estacion_Combustible,
+          Kilometraje_Recarga: refill.Kilometraje_Recarga,
+          Fecha: refill.Fecha,
+          Precio: refill.Precio,
+          ID_Unidad_Combustible: refill.Unidad_Combustible.ID_Unidad_Combustible
+        };
+        refills.push(this.cookieHelper.dataToSend(extractedRefills));
+      }
+    });
+
+    const data: exportData &#x3D; {
+      logs: exportingLogs,
+      refills
+    };
+
+    const mutationResponse &#x3D; await this.logMutation.createMaintenance(data);
+
+    if (mutationResponse) {
+      this.router.navigate([&#x60;/admin/log/${this.selectedVehicle.ID_Vehiculo}&#x60;]);
+    }
+  }
+
+  private fetchData(): void {
+    const vehicleId &#x3D; +this.route.snapshot.params.id;
+    if(vehicleId !&#x3D;&#x3D; 0) {
+      this.vehicleQuery.getVehicle(vehicleId).subscribe(({ data }) &#x3D;&gt; {
+        if(data){
+          this.vehicle &#x3D; data;
+          this.currentKm &#x3D; this.vehicle.Kilometraje;
+          this.fillForm();
+        }
+      });
+    }
+    this.driverQuery.getAllDrivers().subscribe(({ data }) &#x3D;&gt; {
+      if(data){
+        this.drivers &#x3D; data;
+      }
+    });
+    this.vehicleQuery.getAllVehicles().subscribe(({ data }) &#x3D;&gt; {
+      if(data){
+        this.vehicles &#x3D; data;
+      }
+    });
+    this.publicQuery.getCities().subscribe(({ data }) &#x3D;&gt; {
+      this.cities &#x3D; data;
+    });
+  }
+
+  private startAutocomplete(): void {
+    this.filteredVehicles &#x3D; this.logForm.controls.vehicle.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this.searchEngine.filterData(this.vehicles, value, Model.vehicle)),
+    );
+    this.filteredDrivers &#x3D; this.logForm.controls.driver.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this.searchEngine.filterData(this.drivers, value, Model.driver)),
+    );
+    this.filteredCities &#x3D; this.logForm.controls.city.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this.searchEngine.filterData(this.cities, value.toString(), Model.city)),
+    );
+  }
+
+  private fillForm(): void {
+    this.selectedVehicle &#x3D; this.vehicle;
+    this.logForm.patchValue({
+      vehicle: this.vehicleInfoHelper.getModel(this.vehicle)
+    });
+    this.readonly &#x3D; true;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-loading class&#x3D;&quot;loading&quot; *ngIf&#x3D;&quot;loading&quot;&gt;&lt;/app-loading&gt;
+
+&lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;!loading&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;logForm&quot; class&#x3D;&quot;driver-form&quot; *ngIf&#x3D;&quot;!showTable&quot;&gt;
+    &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Vehículo&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        required
+        [readonly]&#x3D;&quot;readonly&quot;
+        class&#x3D;&quot;input&quot;
+        [matAutocomplete]&#x3D;&quot;autoVehicle&quot;
+        formControlName&#x3D;&quot;vehicle&quot;
+        placeholder&#x3D;&quot;Ingrese el vehículo&quot;
+      &gt;
+      &lt;mat-autocomplete #autoVehicle&#x3D;&quot;matAutocomplete&quot;&gt;
+        @for (vehicle of filteredVehicles | async; track vehicle.ID_Vehiculo) {
+          &lt;mat-option [value]&#x3D;&quot;vehicleInfoHelper.getModel(vehicle)&quot; (click)&#x3D;&quot;selectVehicle(vehicle)&quot;&gt;
+            {{ vehicleInfoHelper.getModel(vehicle) }}
+          &lt;/mat-option&gt;
+        }
+      &lt;/mat-autocomplete&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Conductor&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        required
+        class&#x3D;&quot;input&quot;
+        [matAutocomplete]&#x3D;&quot;autoDriver&quot;
+        formControlName&#x3D;&quot;driver&quot;
+        placeholder&#x3D;&quot;Ingrese el conductor&quot;
+      &gt;
+      &lt;mat-autocomplete #autoDriver&#x3D;&quot;matAutocomplete&quot;&gt;
+        @for (driver of filteredDrivers | async; track driver.ID_Conductor) {
+          &lt;mat-option [value]&#x3D;&quot;driver.Nombre&quot; (click)&#x3D;&quot;selectDriver(driver)&quot;&gt;
+            {{ driver.Nombre }}
+          &lt;/mat-option&gt;
+        }
+      &lt;/mat-autocomplete&gt;
+    &lt;/mat-form-field&gt;
+    &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+      &lt;mat-label class&#x3D;&quot;label&quot;&gt;Ciudad&lt;/mat-label&gt;
+      &lt;input
+        matInput
+        required
+        class&#x3D;&quot;input&quot;
+        [matAutocomplete]&#x3D;&quot;autoCity&quot;
+        formControlName&#x3D;&quot;city&quot;
+        placeholder&#x3D;&quot;Ingrese la ciudad de la gira&quot;
+      &gt;
+      &lt;mat-autocomplete #autoCity&#x3D;&quot;matAutocomplete&quot;&gt;
+        @for (city of filteredCities | async; track city.ID_Ciudad) {
+          &lt;mat-option [value]&#x3D;&quot;city.Nombre&quot; (click)&#x3D;&quot;selectCity(city)&quot;&gt;
+            {{ city.Nombre }}
+          &lt;/mat-option&gt;
+        }
+      &lt;/mat-autocomplete&gt;
+    &lt;/mat-form-field&gt;
+  &lt;/form&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;error&quot;&gt;Llena todos los campos requeridos!&lt;/mat-error&gt;
+
+  &lt;div class&#x3D;&quot;buttons-log&quot; *ngIf&#x3D;&quot;showTable&quot;&gt;
+    &lt;app-primary-button styleClass&#x3D;&quot;btn-red&quot; class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;return()&quot;&gt;Cancelar&lt;/app-primary-button&gt;
+    &lt;app-primary-button class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;openLogModal()&quot;&gt;Agregar bitácora&lt;/app-primary-button&gt;
+    &lt;app-primary-button class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;onSubmit()&quot;&gt;Guardar Bitácoras&lt;/app-primary-button&gt;
+  &lt;/div&gt;
+  &lt;section class&#x3D;&quot;table-container&quot; *ngIf&#x3D;&quot;showTable&quot;&gt;
+    &lt;table #table mat-table [dataSource]&#x3D;&quot;logs | paginate: { itemsPerPage: 6, currentPage: page }&quot; class&#x3D;&quot;table&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;date&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Fecha&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ formatDate(element.Fecha) }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;destination&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Destino&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ element.Destino }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;timeOut&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Hora Salida&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ formatTime(element.Hora_Salida) }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;timeIn&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Hora Entrada&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ formatTime(element.Hora_Entrada) }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;kmsIn&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Km Entrada&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ element.Kilometraje_Entrada }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;kmsOut&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Km Salida&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ element.Kilometraje_Salida }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;gas&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;
+          &lt;i class&#x3D;&quot;uil uil-pump&quot;&gt;&lt;/i&gt;
+        &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          &lt;i class&#x3D;&quot;uil uil-pump gas&quot; *ngIf&#x3D;&quot;hasGasRefill(element)&quot; (click)&#x3D;&quot;openGasInfo(element, &#x27;show&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-plus-circle gas&quot; *ngIf&#x3D;&quot;!hasGasRefill(element)&quot; (click)&#x3D;&quot;openGasInfo(element)&quot;&gt;&lt;/i&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;passengers&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Pasajeros&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          &lt;i class&#x3D;&quot;uil uil-users-alt&quot; *ngIf&#x3D;&quot;hasPassengers(element)&quot; (click)&#x3D;&quot;openPassengerModal(element, &#x27;show&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-plus-circle&quot; *ngIf&#x3D;&quot;!hasPassengers(element)&quot; (click)&#x3D;&quot;openPassengerModal(element)&quot;&gt;&lt;/i&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;observation&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Observaciones&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          {{ element.Observaciones }}
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;ng-container matColumnDef&#x3D;&quot;delete&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot;table-cell title&quot;&gt;Borrar&lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; class&#x3D;&quot;table-cell&quot;&gt;
+          &lt;i class&#x3D;&quot;uil uil-trash-alt&quot; (click)&#x3D;&quot;removeLog(element)&quot;&gt;&lt;/i&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+
+      &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+      &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns&quot;&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;pagination-controls
+      class&#x3D;&quot;my-pagination&quot;
+      (pageChange)&#x3D;&quot;page &#x3D; $event&quot;
+      previousLabel&#x3D;&quot;Anterior&quot;
+      nextLabel&#x3D;&quot;Siguiente&quot;
+    &gt;
+    &lt;/pagination-controls&gt;
+  &lt;/section&gt;
+
+  &lt;div class&#x3D;&quot;buttons&quot; *ngIf&#x3D;&quot;!showTable&quot;&gt;
+    &lt;app-primary-button styleClass&#x3D;&quot;btn-red&quot; class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;return()&quot;&gt;Cancelar&lt;/app-primary-button&gt;
+    &lt;app-primary-button class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;showLogTable()&quot;&gt;Siguiente&lt;/app-primary-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-loading class="loading" *ngIf="loading"></app-loading><div class="container" *ngIf="!loading">  <form [formGroup]="logForm" class="driver-form" *ngIf="!showTable">    <mat-form-field class="field">      <mat-label class="label">Vehículo</mat-label>      <input        matInput        required        [readonly]="readonly"        class="input"        [matAutocomplete]="autoVehicle"        formControlName="vehicle"        placeholder="Ingrese el vehículo"      >      <mat-autocomplete #autoVehicle="matAutocomplete">        @for (vehicle of filteredVehicles | async; track vehicle.ID_Vehiculo) {          <mat-option [value]="vehicleInfoHelper.getModel(vehicle)" (click)="selectVehicle(vehicle)">            {{ vehicleInfoHelper.getModel(vehicle) }}          </mat-option>        }      </mat-autocomplete>    </mat-form-field>    <mat-form-field class="field">      <mat-label class="label">Conductor</mat-label>      <input        matInput        required        class="input"        [matAutocomplete]="autoDriver"        formControlName="driver"        placeholder="Ingrese el conductor"      >      <mat-autocomplete #autoDriver="matAutocomplete">        @for (driver of filteredDrivers | async; track driver.ID_Conductor) {          <mat-option [value]="driver.Nombre" (click)="selectDriver(driver)">            {{ driver.Nombre }}          </mat-option>        }      </mat-autocomplete>    </mat-form-field>    <mat-form-field class="field">      <mat-label class="label">Ciudad</mat-label>      <input        matInput        required        class="input"        [matAutocomplete]="autoCity"        formControlName="city"        placeholder="Ingrese la ciudad de la gira"      >      <mat-autocomplete #autoCity="matAutocomplete">        @for (city of filteredCities | async; track city.ID_Ciudad) {          <mat-option [value]="city.Nombre" (click)="selectCity(city)">            {{ city.Nombre }}          </mat-option>        }      </mat-autocomplete>    </mat-form-field>  </form>  <mat-error class="error" *ngIf="error">Llena todos los campos requeridos!</mat-error>  <div class="buttons-log" *ngIf="showTable">    <app-primary-button styleClass="btn-red" class="btn" (btnClick)="return()">Cancelar</app-primary-button>    <app-primary-button class="btn" (btnClick)="openLogModal()">Agregar bitácora</app-primary-button>    <app-primary-button class="btn" (btnClick)="onSubmit()">Guardar Bitácoras</app-primary-button>  </div>  <section class="table-container" *ngIf="showTable">    <table #table mat-table [dataSource]="logs | paginate: { itemsPerPage: 6, currentPage: page }" class="table">      <ng-container matColumnDef="date">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Fecha</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ formatDate(element.Fecha) }}        </td>      </ng-container>      <ng-container matColumnDef="destination">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Destino</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ element.Destino }}        </td>      </ng-container>      <ng-container matColumnDef="timeOut">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Hora Salida</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ formatTime(element.Hora_Salida) }}        </td>      </ng-container>      <ng-container matColumnDef="timeIn">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Hora Entrada</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ formatTime(element.Hora_Entrada) }}        </td>      </ng-container>      <ng-container matColumnDef="kmsIn">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Km Entrada</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ element.Kilometraje_Entrada }}        </td>      </ng-container>      <ng-container matColumnDef="kmsOut">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Km Salida</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ element.Kilometraje_Salida }}        </td>      </ng-container>      <ng-container matColumnDef="gas">        <th mat-header-cell *matHeaderCellDef class="table-cell title">          <i class="uil uil-pump"></i>        </th>        <td mat-cell *matCellDef="let element" class="table-cell">          <i class="uil uil-pump gas" *ngIf="hasGasRefill(element)" (click)="openGasInfo(element, \'show\')"></i>          <i class="uil uil-plus-circle gas" *ngIf="!hasGasRefill(element)" (click)="openGasInfo(element)"></i>        </td>      </ng-container>      <ng-container matColumnDef="passengers">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Pasajeros</th>        <td mat-cell *matCellDef="let element" class="table-cell">          <i class="uil uil-users-alt" *ngIf="hasPassengers(element)" (click)="openPassengerModal(element, \'show\')"></i>          <i class="uil uil-plus-circle" *ngIf="!hasPassengers(element)" (click)="openPassengerModal(element)"></i>        </td>      </ng-container>      <ng-container matColumnDef="observation">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Observaciones</th>        <td mat-cell *matCellDef="let element" class="table-cell">          {{ element.Observaciones }}        </td>      </ng-container>      <ng-container matColumnDef="delete">        <th mat-header-cell *matHeaderCellDef class="table-cell title">Borrar</th>        <td mat-cell *matCellDef="let element" class="table-cell">          <i class="uil uil-trash-alt" (click)="removeLog(element)"></i>        </td>      </ng-container>      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>    </table>    <pagination-controls      class="my-pagination"      (pageChange)="page = $event"      previousLabel="Anterior"      nextLabel="Siguiente"    >    </pagination-controls>  </section>  <div class="buttons" *ngIf="!showTable">    <app-primary-button styleClass="btn-red" class="btn" (btnClick)="return()">Cancelar</app-primary-button>    <app-primary-button class="btn" (btnClick)="showLogTable()">Siguiente</app-primary-button>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CreateLogComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CreateLogComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

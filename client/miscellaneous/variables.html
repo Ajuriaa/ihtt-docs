@@ -1,0 +1,1398 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ACTION" title="src/app/auth/services/auth.mutations.ts" ><b>ACTION</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mutations.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#API_URL" title="src/app/auth/services/auth.mutations.ts" ><b>API_URL</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mutations.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#APP_ID" title="src/app/auth/services/auth.mutations.ts" ><b>APP_ID</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mutations.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#appConfig" title="src/app/app.config.ts" ><b>appConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#authGuard" title="src/app/core/guards/auth.guard.ts" ><b>authGuard</b>&nbsp;&nbsp;&nbsp;(src/.../auth.guard.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#BAR_OPTIONS" title="src/app/admin/containers/dashboard/dashboard.component.ts" ><b>BAR_OPTIONS</b>&nbsp;&nbsp;&nbsp;(src/.../dashboard.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_COORDS" title="src/app/core/services/maps.service.ts" ><b>DEFAULT_COORDS</b>&nbsp;&nbsp;&nbsp;(src/.../maps.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_COORDS" title="src/app/admin/containers/vehicle/vehicle.component.ts" ><b>DEFAULT_COORDS</b>&nbsp;&nbsp;&nbsp;(src/.../vehicle.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_BRAND" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_BRAND</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_CITY" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_CITY</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_DRIVER" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_DRIVER</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_GAS_REFILL" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_GAS_REFILL</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_GAS_UNIT" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_GAS_UNIT</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_LOG" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_LOG</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_MODEL" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_MODEL</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_REQUEST" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_REQUEST</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_REQUEST_STATUS" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_REQUEST_STATUS</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_REQUEST_TYPE" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_REQUEST_TYPE</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_USER" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_USER</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_VEHICLE" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_VEHICLE</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_VEHICLE_STATE" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_VEHICLE_STATE</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EMPTY_VEHICLE_TYPE" title="src/app/core/helpers/interface-initializers.ts" ><b>EMPTY_VEHICLE_TYPE</b>&nbsp;&nbsp;&nbsp;(src/.../interface-initializers.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.template.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.template.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environments.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environments.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#FILE_BASE_URL" title="src/app/admin/components/create-update-vehicle/create-update-vehicle.component.ts" ><b>FILE_BASE_URL</b>&nbsp;&nbsp;&nbsp;(src/.../create-update-vehicle.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#LINE_OPTIONS" title="src/app/admin/containers/dashboard/dashboard.component.ts" ><b>LINE_OPTIONS</b>&nbsp;&nbsp;&nbsp;(src/.../dashboard.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MAINTENANCE_COORDS" title="src/app/admin/containers/vehicle/vehicle.component.ts" ><b>MAINTENANCE_COORDS</b>&nbsp;&nbsp;&nbsp;(src/.../vehicle.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#MODULE_NUMBER" title="src/app/auth/services/auth.mutations.ts" ><b>MODULE_NUMBER</b>&nbsp;&nbsp;&nbsp;(src/.../auth.mutations.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OPTIONS" title="src/app/admin/containers/vehicle/vehicle.component.ts" ><b>OPTIONS</b>&nbsp;&nbsp;&nbsp;(src/.../vehicle.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#PIE_OPTIONS" title="src/app/admin/containers/dashboard/dashboard.component.ts" ><b>PIE_OPTIONS</b>&nbsp;&nbsp;&nbsp;(src/.../dashboard.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TABLE_COLUMNS" title="src/app/admin/containers/create-log/create-log.component.ts" ><b>TABLE_COLUMNS</b>&nbsp;&nbsp;&nbsp;(src/.../create-log.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TABLE_COLUMNS" title="src/app/admin/containers/drivers/drivers.component.ts" ><b>TABLE_COLUMNS</b>&nbsp;&nbsp;&nbsp;(src/.../drivers.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TABLE_COLUMNS" title="src/app/admin/containers/log/log.component.ts" ><b>TABLE_COLUMNS</b>&nbsp;&nbsp;&nbsp;(src/.../log.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TABLE_COLUMNS" title="src/app/admin/containers/requests/requests.component.ts" ><b>TABLE_COLUMNS</b>&nbsp;&nbsp;&nbsp;(src/.../requests.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TABLE_COLUMNS" title="src/app/admin/containers/vehicles/vehicles.component.ts" ><b>TABLE_COLUMNS</b>&nbsp;&nbsp;&nbsp;(src/.../vehicles.component.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/auth/services/auth.mutations.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ACTION"></a>
+                    <span class="name">
+                        <span ><b>ACTION</b></span>
+                        <a href="#ACTION"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;do-login-web&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="API_URL"></a>
+                    <span class="name">
+                        <span ><b>API_URL</b></span>
+                        <a href="#API_URL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;https://satt.transporte.gob.hn/api_login.php&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="APP_ID"></a>
+                    <span class="name">
+                        <span ><b>APP_ID</b></span>
+                        <a href="#APP_ID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;89b473b3ea9d5b6719c8ee8ce0c247d5&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MODULE_NUMBER"></a>
+                    <span class="name">
+                        <span ><b>MODULE_NUMBER</b></span>
+                        <a href="#MODULE_NUMBER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>3</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/app.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appConfig"></a>
+                    <span class="name">
+                        <span ><b>appConfig</b></span>
+                        <a href="#appConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ApplicationConfig</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  providers: [
+    provideRouter(routes), provideAnimationsAsync(&#x27;noop&#x27;),
+    provideAnimations(), provideToastr(), provideHttpClient(withFetch()), provideAnimationsAsync(),
+    { provide: MAT_DATE_LOCALE, useValue: &#x27;es-ES&#x27; },
+    { provide: LocationStrategy, useClass: HashLocationStrategy},
+    cookieHelper,
+    provideCharts(withDefaultRegisterables())
+  ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/guards/auth.guard.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authGuard"></a>
+                    <span class="name">
+                        <span ><b>authGuard</b></span>
+                        <a href="#authGuard"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(state: RouterStateSnapshot) &#x3D;&gt; {
+  const router: Router &#x3D; inject(Router);
+
+  if (findToken()) {
+    return true;
+  }
+
+  router.navigate([&#x27;/&#x27;], { queryParams: { returnUrl: state.url } });
+  return true;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/dashboard/dashboard.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="BAR_OPTIONS"></a>
+                    <span class="name">
+                        <span ><b>BAR_OPTIONS</b></span>
+                        <a href="#BAR_OPTIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  scales: {
+    y: { ticks: { font: {size: 20}}},
+    x: { ticks: { font: {size: 20, weight: &#x27;bold&#x27;}}}
+  },
+  plugins: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: &#x27;Total de kilometros recorridos por mes&#x27;,
+      font: { size: 25 }
+    }
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LINE_OPTIONS"></a>
+                    <span class="name">
+                        <span ><b>LINE_OPTIONS</b></span>
+                        <a href="#LINE_OPTIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  scales: {
+    y: { ticks: { font: {size: 20}}},
+    x: { ticks: { font: {size: 20, weight: &#x27;bold&#x27; }}}
+  },
+  plugins: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: &#x27;Total de lempiras gastados en gasolina por mes&#x27;,
+      font: { size: 20 }
+    }
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="PIE_OPTIONS"></a>
+                    <span class="name">
+                        <span ><b>PIE_OPTIONS</b></span>
+                        <a href="#PIE_OPTIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  plugins: {
+    legend: {
+      position: &#x27;bottom&#x27;,
+      fullSize: true,
+      labels: {
+        font: { size: 15 }
+      }
+    },
+    title: {
+      display: true,
+      text: &#x27;Ciudades Vistadas&#x27;,
+      font: { size: 20 }
+    }
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/services/maps.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_COORDS"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_COORDS</b></span>
+                        <a href="#DEFAULT_COORDS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ lat: 14.089656466933825, lng: -87.1869442583274 }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/vehicle/vehicle.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_COORDS"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_COORDS</b></span>
+                        <a href="#DEFAULT_COORDS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ lat: 14.089656466933825, lng: -87.1869442583274 }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="MAINTENANCE_COORDS"></a>
+                    <span class="name">
+                        <span ><b>MAINTENANCE_COORDS</b></span>
+                        <a href="#MAINTENANCE_COORDS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ lat: 14.09926541800526, lng: -87.15743413863002 }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OPTIONS"></a>
+                    <span class="name">
+                        <span ><b>OPTIONS</b></span>
+                        <a href="#OPTIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  scales: {
+    y: { beginAtZero: true}
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/helpers/interface-initializers.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_BRAND"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_BRAND</b></span>
+                        <a href="#EMPTY_BRAND"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IBrand.html" target="_self" >IBrand</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Marca_Vehiculo: 0,
+  Marca: &#x27;&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_CITY"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_CITY</b></span>
+                        <a href="#EMPTY_CITY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICity.html" target="_self" >ICity</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Ciudad: 0,
+  Nombre: &quot;&quot;,
+  Kms: 0,
+  Coordenadas: &quot;&quot;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_DRIVER"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_DRIVER</b></span>
+                        <a href="#EMPTY_DRIVER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IDriver.html" target="_self" >IDriver</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Conductor: 0,
+  Nombre: &quot;&quot;,
+  Solicitudes_Finalizadas: 0,
+  Disponible: false
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_GAS_REFILL"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_GAS_REFILL</b></span>
+                        <a href="#EMPTY_GAS_REFILL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IGasRefill.html" target="_self" >IGasRefill</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Llenado_Combustible: 0,
+  Cantidad: 0,
+  Estacion_Combustible: &#x27;&#x27;,
+  Kilometraje_Recarga: 0,
+  Fecha: new Date(),
+  Precio: 0,
+  Unidad_Combustible: EMPTY_GAS_UNIT,
+  Bitacora: EMPTY_LOG
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_GAS_UNIT"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_GAS_UNIT</b></span>
+                        <a href="#EMPTY_GAS_UNIT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IGasUnit.html" target="_self" >IGasUnit</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Unidad_Combustible: 0,
+  Unidad: &#x27;&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_LOG"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_LOG</b></span>
+                        <a href="#EMPTY_LOG"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ILog.html" target="_self" >ILog</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Bitacora: 0,
+  Destino: &#x27;&#x27;,
+  Pasajeros: &#x27;&#x27;,
+  Kilometraje_Entrada: 0,
+  Kilometraje_Salida: 0,
+  Hora_Salida: new Date(),
+  Hora_Entrada: new Date(),
+  Fecha: new Date(),
+  Observaciones: &#x27;&#x27;,
+  Llenados_Combustible: [],
+  Conductor: EMPTY_DRIVER,
+  Vehiculo: EMPTY_VEHICLE,
+  Ciudad: EMPTY_CITY
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_MODEL"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_MODEL</b></span>
+                        <a href="#EMPTY_MODEL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IModel.html" target="_self" >IModel</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Modelo: 0,
+  Modelo: &#x27;&#x27;,
+  Marca_Vehiculo: EMPTY_BRAND,
+  Tipo_Vehiculo: EMPTY_VEHICLE_TYPE
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_REQUEST"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_REQUEST</b></span>
+                        <a href="#EMPTY_REQUEST"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRequest.html" target="_self" >IRequest</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Solicitud: 0,
+  ID_Empleado: 0,
+  Nombre_Empleado: &quot;&quot;,
+  Destino: &quot;&quot;,
+  Motivo: &quot;&quot;,
+  Fecha: new Date(),
+  Hora_Salida: new Date(),
+  Hora_Regreso: new Date(),
+  Ciudad: EMPTY_CITY,
+  Estado_Solicitud: EMPTY_REQUEST_STATUS,
+  Tipo_Solicitud: EMPTY_REQUEST_TYPE,
+  Pasajeros: &quot;&quot;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_REQUEST_STATUS"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_REQUEST_STATUS</b></span>
+                        <a href="#EMPTY_REQUEST_STATUS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRequestStatus.html" target="_self" >IRequestStatus</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Estado_Solicitud: 0,
+  Estado: &quot;&quot;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_REQUEST_TYPE"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_REQUEST_TYPE</b></span>
+                        <a href="#EMPTY_REQUEST_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRequestType.html" target="_self" >IRequestType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Tipo_Solicitud: 0,
+  Tipo_Solicitud: &quot;&quot;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_USER"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_USER</b></span>
+                        <a href="#EMPTY_USER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Empleado: 0,
+  Nombres: &#x27;&#x27;,
+  Apellidos: &#x27;&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_VEHICLE"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_VEHICLE</b></span>
+                        <a href="#EMPTY_VEHICLE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Vehiculo: 0,
+  Placa: &#x27;&#x27;,
+  Kilometraje: 0,
+  Chasis: &#x27;&#x27;,
+  Motor: &#x27;&#x27;,
+  KPG: 0,
+  Imagen_URL: &#x27;&#x27;,
+  Anio: 0,
+  Solicitudes: [],
+  Color: &#x27;&#x27;,
+  Estado_Vehiculo: EMPTY_VEHICLE_STATE,
+  Modelo: EMPTY_MODEL,
+  Siguiente_Mantenimiento: 0,
+  Bitacoras: [],
+  Mantenimientos: []
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_VEHICLE_STATE"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_VEHICLE_STATE</b></span>
+                        <a href="#EMPTY_VEHICLE_STATE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicleStatus.html" target="_self" >IVehicleStatus</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Estado_Vehiculo: 0,
+  Estado_Vehiculo: &#x27;&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EMPTY_VEHICLE_TYPE"></a>
+                    <span class="name">
+                        <span ><b>EMPTY_VEHICLE_TYPE</b></span>
+                        <a href="#EMPTY_VEHICLE_TYPE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicleType.html" target="_self" >IVehicleType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  ID_Tipo_Vehiculo: 0,
+  Tipo_Vehiculo: &#x27;&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.template.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false,
+  apiUrl: &#x27;API_URL&#x27;,
+  filesUrl: &#x27;FILES_URL&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environments.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false,
+  apiUrl: &#x27;https://122.8.187.163:5700/api/vehicle-system&#x27;,
+  filesUrl: &#x27;https://satt.transporte.gob.hn:295/files/&#x27;,
+  ftpInfo: {
+    host: &#x27;122.8.187.163&#x27;,
+    port: 21021,
+    user: &#x27;root&#x27;,
+    password: &#x27;7P04kX@VZU!!9isPwiP!H77?&#x27;,
+    type: &#x27;SFTP&#x27;,
+    filePath: &#x27;/var/www/Jajuria/Solicitud_Vehiculos/files/&#x27;
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/components/create-update-vehicle/create-update-vehicle.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="FILE_BASE_URL"></a>
+                    <span class="name">
+                        <span ><b>FILE_BASE_URL</b></span>
+                        <a href="#FILE_BASE_URL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.filesUrl</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/create-log/create-log.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TABLE_COLUMNS"></a>
+                    <span class="name">
+                        <span ><b>TABLE_COLUMNS</b></span>
+                        <a href="#TABLE_COLUMNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  &#x27;date&#x27;  ,&#x27;destination&#x27;, &#x27;timeOut&#x27;, &#x27;timeIn&#x27;, &#x27;kmsOut&#x27;, &#x27;kmsIn&#x27;, &#x27;gas&#x27;, &#x27;passengers&#x27;, &#x27;observation&#x27;,&#x27;delete&#x27;
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/drivers/drivers.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TABLE_COLUMNS"></a>
+                    <span class="name">
+                        <span ><b>TABLE_COLUMNS</b></span>
+                        <a href="#TABLE_COLUMNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;name&#x27;, &#x27;endedRequestCount&#x27;, &#x27;available&#x27;, &#x27;edit&#x27;]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/log/log.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TABLE_COLUMNS"></a>
+                    <span class="name">
+                        <span ><b>TABLE_COLUMNS</b></span>
+                        <a href="#TABLE_COLUMNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  &#x27;date&#x27;, &#x27;driver&#x27;, &#x27;destination&#x27;, &#x27;city&#x27;, &#x27;kmsOut&#x27;, &#x27;kmsIn&#x27;, &#x27;timeOut&#x27;, &#x27;timeIn&#x27;, &#x27;observation&#x27;, &#x27;passengers&#x27;, &#x27;gas&#x27;
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/requests/requests.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TABLE_COLUMNS"></a>
+                    <span class="name">
+                        <span ><b>TABLE_COLUMNS</b></span>
+                        <a href="#TABLE_COLUMNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  &#x27;status&#x27;, &#x27;name&#x27;, &#x27;date&#x27;, &#x27;timeOut&#x27;, &#x27;timeIn&#x27;, &#x27;city&#x27;, &#x27;vehicle&#x27;, &#x27;driver&#x27;, &#x27;actions&#x27;
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/admin/containers/vehicles/vehicles.component.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TABLE_COLUMNS"></a>
+                    <span class="name">
+                        <span ><b>TABLE_COLUMNS</b></span>
+                        <a href="#TABLE_COLUMNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[ &#x27;plate&#x27;, &#x27;model&#x27;, &#x27;type&#x27;,&#x27;status&#x27;, &#x27;edit&#x27;]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

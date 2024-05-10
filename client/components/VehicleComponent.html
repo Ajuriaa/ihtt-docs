@@ -1,0 +1,1728 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  VehicleComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/containers/vehicle/vehicle.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-vehicle</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                                <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+                                <code><a href="../components/PrimaryButtonComponent.html" target="_self" >PrimaryButtonComponent</a></code>
+                            <code>BaseChartDirective</code>
+                            <code>MatTooltipModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./vehicle.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./vehicle.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentMonth" >currentMonth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#datasets" >datasets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#date" >date</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#defaultCoords" >defaultCoords</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#directionRenderer" >directionRenderer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#finalMarker" >finalMarker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#history" >history</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#initialMarker" >initialMarker</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lastMonth" >lastMonth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#maintenanceCoords" >maintenanceCoords</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#maintenanceInfo" >maintenanceInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#mapRef" >mapRef</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#model" >model</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#options" >options</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#request" >request</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicle" >vehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicleHelper" >vehicleHelper</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicleId" >vehicleId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentMonthBigger" >currentMonthBigger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getGasAndMaintenanceInfo" >getGasAndMaintenanceInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getVehicle" >getVehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goToLogs" >goToLogs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goToRequests" >goToRequests</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initializeMap" >initializeMap</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(vehicleHelper: <a href="../classes/vehicleInfoHelper.html" target="_self">vehicleInfoHelper</a>, route: ActivatedRoute, router: Router, mapService: <a href="../injectables/MapsService.html" target="_self">MapsService</a>, vehicleQuery: <a href="../injectables/VehicleQueries.html" target="_self">VehicleQueries</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>vehicleHelper</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>mapService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MapsService.html" target="_self" >MapsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>vehicleQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/VehicleQueries.html" target="_self" >VehicleQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentMonthBigger"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentMonthBigger</b></span>
+                        <a href="#currentMonthBigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>currentMonthBigger(prop: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="75"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>prop</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGasAndMaintenanceInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getGasAndMaintenanceInfo</b></span>
+                        <a href="#getGasAndMaintenanceInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getGasAndMaintenanceInfo()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getVehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getVehicle</b></span>
+                        <a href="#getVehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getVehicle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="91"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToLogs"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>goToLogs</b></span>
+                        <a href="#goToLogs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToLogs()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToRequests"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>goToRequests</b></span>
+                        <a href="#goToRequests"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToRequests()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initializeMap"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>initializeMap</b></span>
+                        <a href="#initializeMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initializeMap()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="62"
+                                    class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:62</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentMonth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentMonth</b></span>
+                        <a href="#currentMonth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicleInfo.html" target="_self" >IVehicleInfo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ kms: 0, gas: 0, cost: 0, kpg: 0, cpk: 0 }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="datasets"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>datasets</b></span>
+                        <a href="#datasets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>date</b></span>
+                        <a href="#date"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="defaultCoords"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>defaultCoords</b></span>
+                        <a href="#defaultCoords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICoordinate.html" target="_self" >ICoordinate</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>DEFAULT_COORDS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="directionRenderer"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>directionRenderer</b></span>
+                        <a href="#directionRenderer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.DirectionsRenderer</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="finalMarker"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>finalMarker</b></span>
+                        <a href="#finalMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.marker.AdvancedMarkerElement</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="history"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>history</b></span>
+                        <a href="#history"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ months: [], kms: [] }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialMarker"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>initialMarker</b></span>
+                        <a href="#initialMarker"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.marker.AdvancedMarkerElement</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastMonth"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>lastMonth</b></span>
+                        <a href="#lastMonth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicleInfo.html" target="_self" >IVehicleInfo</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ kms: 0, gas: 0, cost: 0, kpg: 0, cpk: 0 }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maintenanceCoords"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>maintenanceCoords</b></span>
+                        <a href="#maintenanceCoords"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICoordinate.html" target="_self" >ICoordinate</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>MAINTENANCE_COORDS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="maintenanceInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>maintenanceInfo</b></span>
+                        <a href="#maintenanceInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ date: new Date(), km: 0 }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>google.maps.Map</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapRef"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>mapRef</b></span>
+                        <a href="#mapRef"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;map&#x27;, {static: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:52</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="model"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>model</b></span>
+                        <a href="#model"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="options"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>options</b></span>
+                        <a href="#options"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>OPTIONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="request"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>request</b></span>
+                        <a href="#request"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRequest.html" target="_self" >IRequest</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_REQUEST</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicle</b></span>
+                        <a href="#vehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_VEHICLE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicleHelper"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicleHelper</b></span>
+                        <a href="#vehicleHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:55</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicleId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicleId</b></span>
+                        <a href="#vehicleId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>this.route.snapshot.params.id</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/admin/containers/vehicle/vehicle.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { EMPTY_REQUEST, EMPTY_VEHICLE } from &#x27;src/app/core/helpers&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { LoadingComponent, PrimaryButtonComponent } from &#x27;src/app/shared&#x27;;
+import { ICoordinate, MapsService } from &#x27;src/app/core/services&#x27;;
+import { MarkerUrl } from &#x27;src/app/core/enums&#x27;;
+import moment from &#x27;moment&#x27;;
+import { BaseChartDirective } from &#x27;ng2-charts&#x27;;
+import { MatTooltipModule } from &#x27;@angular/material/tooltip&#x27;;
+import { vehicleInfoHelper } from &#x27;../../helpers&#x27;;
+import { VehicleQueries } from &#x27;../../services&#x27;;
+import { IRequest, IVehicle, IVehicleInfo } from &#x27;../../interfaces&#x27;;
+
+const MAINTENANCE_COORDS &#x3D; { lat: 14.09926541800526, lng: -87.15743413863002 };
+const DEFAULT_COORDS &#x3D; { lat: 14.089656466933825, lng: -87.1869442583274 };
+const OPTIONS &#x3D; {
+  scales: {
+    y: { beginAtZero: true}
+  }
+};
+@Component({
+  selector: &#x27;app-vehicle&#x27;,
+  standalone: true,
+  imports: [
+    CommonModule, LoadingComponent, PrimaryButtonComponent,
+    BaseChartDirective, MatTooltipModule
+  ],
+  providers: [vehicleInfoHelper],
+  templateUrl: &#x27;./vehicle.component.html&#x27;,
+  styleUrl: &#x27;./vehicle.component.scss&#x27;
+})
+export class VehicleComponent implements OnInit {
+  public loading &#x3D; true;
+  public vehicleId &#x3D; this.route.snapshot.params.id;
+  public vehicle: IVehicle &#x3D; EMPTY_VEHICLE;
+  public map!: google.maps.Map;
+  public initialMarker!: google.maps.marker.AdvancedMarkerElement;
+  public finalMarker!: google.maps.marker.AdvancedMarkerElement;
+  public directionRenderer!: google.maps.DirectionsRenderer;
+  public lastMonth: IVehicleInfo &#x3D; { kms: 0, gas: 0, cost: 0, kpg: 0, cpk: 0 };
+  public currentMonth: IVehicleInfo &#x3D; { kms: 0, gas: 0, cost: 0, kpg: 0, cpk: 0 };
+  public maintenanceInfo: { date: Date, km: number} &#x3D; { date: new Date(), km: 0 };
+  public history: { months: string[]; kms: number[]; } &#x3D; { months: [], kms: [] };
+  public model &#x3D; &#x27;&#x27;;
+  public maintenanceCoords: ICoordinate &#x3D; MAINTENANCE_COORDS;
+  public defaultCoords: ICoordinate &#x3D; DEFAULT_COORDS;
+  public request: IRequest &#x3D; EMPTY_REQUEST;
+  public date &#x3D; &#x27;&#x27;;
+  public datasets: any[] &#x3D; [];
+  public options &#x3D; OPTIONS;
+  @ViewChild(&#x27;map&#x27;, { static: true }) public mapRef!: ElementRef;
+
+  constructor(
+    public vehicleHelper: vehicleInfoHelper,
+    private route: ActivatedRoute,
+    private router: Router,
+    private mapService: MapsService,
+    private vehicleQuery: VehicleQueries
+  ){}
+
+  ngOnInit(): void {
+    this.getVehicle();
+    this.getGasAndMaintenanceInfo();
+  }
+
+  public goToLogs(): void {
+    this.router.navigate([&#x60;/admin/log/${this.vehicleId}&#x60;]);
+  }
+
+  public goToRequests(): void {
+    this.router.navigate([&#x60;/admin/requests/${this.vehicleId}&#x60;]);
+  }
+
+  public currentMonthBigger(prop: string): boolean {
+    switch (prop) {
+      case &#x27;gas&#x27;:
+        return this.lastMonth.gas &lt; this.currentMonth.gas;
+      case &#x27;cost&#x27;:
+        return this.lastMonth.cost &lt; this.currentMonth.cost;
+      case &#x27;kpg&#x27;:
+        return this.lastMonth.kpg &lt; this.currentMonth.kpg;
+      case &#x27;cpk&#x27;:
+        return this.lastMonth.cpk &lt; this.currentMonth.cpk;
+      case &#x27;kms&#x27;:
+        return this.lastMonth.kms &lt; this.currentMonth.kms;
+    }
+    return false;
+  }
+
+  private getVehicle(): void {
+    this.vehicleQuery.getVehicle(this.vehicleId).subscribe(({data}) &#x3D;&gt; {
+      this.vehicle &#x3D; data;
+
+      if (this.vehicle.Estado_Vehiculo.Estado_Vehiculo &#x3D;&#x3D;&#x3D; &#x27;En Uso&#x27;) {
+        this.request &#x3D; this.vehicle.Solicitudes[0];
+      }
+      this.model &#x3D; this.vehicleHelper.getModel(this.vehicle);
+      this.initializeMap();
+    });
+  }
+
+  private getGasAndMaintenanceInfo(): void {
+    this.vehicleQuery.getVehicleInfo(this.vehicleId).subscribe((data) &#x3D;&gt; {
+      this.lastMonth &#x3D; data.last;
+      this.currentMonth &#x3D; data.current;
+      this.maintenanceInfo &#x3D; data.maintenance;
+      this.history &#x3D; data.history;
+      this.datasets &#x3D; [{
+        data: this.history.kms,
+        label: &#x27;kms recorridos&#x27;
+      }];
+      this.date &#x3D; moment.utc(this.maintenanceInfo.date).format(&#x27;DD/MM/YYYY&#x27;);
+    });
+  }
+
+  private initializeMap(): void {
+    this.map &#x3D; this.mapService.generateDefaultMap(this.mapRef);
+    switch (this.vehicle.Estado_Vehiculo.Estado_Vehiculo) {
+      case &#x27;En Mantenimiento&#x27;:
+        this.initialMarker &#x3D; this.mapService.addMarker(this.map, this.maintenanceCoords, MarkerUrl.warningCar);
+        this.map.setCenter(this.maintenanceCoords);
+        break;
+      case &#x27;Disponible&#x27;:
+        this.initialMarker &#x3D; this.mapService.addMarker(this.map, this.defaultCoords, MarkerUrl.car);
+        break;
+      case &#x27;Inactivo&#x27;:
+        this.initialMarker &#x3D; this.mapService.addMarker(this.map, this.defaultCoords, MarkerUrl.warningCar);
+        break;
+      case &#x27;En Uso&#x27;:
+        this.initialMarker &#x3D; this.mapService.addMarker(this.map, JSON.parse(this.request.Ciudad.Coordenadas), MarkerUrl.car);
+        this.map.setCenter(JSON.parse(this.request.Ciudad.Coordenadas));
+        break;
+      default:
+        this.initialMarker &#x3D; this.mapService.addMarker(this.map, this.defaultCoords, MarkerUrl.car);
+        break;
+    }
+    this.loading &#x3D; false;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-loading class&#x3D;&quot;loading&quot; *ngIf&#x3D;&quot;loading&quot;&gt;&lt;/app-loading&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;section class&#x3D;&quot;panel&quot;&gt;
+    &lt;div class&#x3D;&quot;car-info&quot;&gt;
+      &lt;img class&#x3D;&quot;img&quot; [src]&#x3D;&quot;vehicle.Imagen_URL&quot;/&gt;
+      &lt;div class&#x3D;&quot;info-wrapper&quot;&gt;
+        &lt;p class&#x3D;&quot;panel-title&quot;&gt;{{ vehicleHelper.getModel(vehicle) }}&lt;/p&gt;
+        &lt;div class&#x3D;&quot;info&quot;&gt;
+          &lt;span&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt; Kilometraje: &lt;strong&gt;{{vehicle.Kilometraje}} Km&lt;/strong&gt;&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt; Placa &lt;strong&gt;{{vehicle.Placa}}&lt;/strong&gt;&lt;/p&gt;
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;Tipo: &lt;strong&gt;{{ vehicleHelper.getType(vehicle) }}&lt;/strong&gt;&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;Estado: &lt;strong&gt;{{ vehicleHelper.getVehicleStatus(vehicle) }}&lt;/strong&gt;&lt;/p&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;btn-container&quot;&gt;
+      &lt;app-primary-button class&#x3D;&quot;button&quot; (btnClick)&#x3D;&quot;goToLogs()&quot;&gt;
+        VER BITACORAS
+      &lt;/app-primary-button&gt;
+      &lt;app-primary-button class&#x3D;&quot;button&quot; (btnClick)&#x3D;&quot;goToRequests()&quot;&gt;
+        VER SOLICITUDES
+      &lt;/app-primary-button&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+  &lt;section class&#x3D;&quot;info-container&quot;&gt;
+    &lt;div class&#x3D;&quot;gas-container&quot;&gt;
+      &lt;div class&#x3D;&quot;first-row&quot;&gt;
+        &lt;span class&#x3D;&quot;item&quot;&gt;
+          &lt;div&gt;
+            &lt;p&gt;KPG&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonth.kpg }}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.kpg&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;kpg&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.kpg&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;kpg&#x27;)&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+        &lt;span class&#x3D;&quot;item&quot;&gt;
+          &lt;div&gt;
+            &lt;p&gt;CPK&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;L.{{ currentMonth.cpk }}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonth.cpk&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;cpk&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonth.cpk&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;cpk&#x27;)&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+        &lt;span class&#x3D;&quot;item&quot;&gt;
+          &lt;div&gt;
+            &lt;p&gt;Precio&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;L.{{ currentMonth.cost }}&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonth.cost&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;cost&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonth.cost&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;cost&#x27;)&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+        &lt;span class&#x3D;&quot;item&quot;&gt;
+          &lt;div&gt;
+            &lt;p&gt;Distancia Recorrida&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonth.kms }} KM&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.kms + &#x27; Km&#x27;&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;kms&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.kms  + &#x27; Km&#x27;&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;kms&#x27;)&quot;&gt;&lt;/i&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;second-row&quot;&gt;
+        &lt;div class&#x3D;&quot;display&quot;&gt;
+          &lt;span class&#x3D;&quot;item&quot;&gt;
+            &lt;div&gt;
+              &lt;p&gt;Cantidad llenada&lt;/p&gt;
+              &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonth.gas }} Galon{{ currentMonth.gas &gt; 1 ? &#x27;es&#x27;: &#x27;&#x27;}}&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.gas&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;gas&#x27;)&quot;&gt;&lt;/i&gt;
+            &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonth.gas&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;gas&#x27;)&quot;&gt;&lt;/i&gt;
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;p&gt;Fecha Últ. Mantenimiento&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ date }}&lt;/p&gt;
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;p&gt;Restante para Mantenimiento&lt;/p&gt;
+            &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ maintenanceInfo.km }} KM&lt;/p&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+          &lt;canvas
+            baseChart
+            class&#x3D;&quot;chart&quot;
+            type&#x3D;&quot;line&quot;
+            [options]&#x3D;&quot;options&quot;
+            [labels]&#x3D;&quot;history.months&quot;
+            [datasets]&#x3D;&quot;datasets&quot;
+          &gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div #map class&#x3D;&quot;map&quot;&gt;&lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-loading class="loading" *ngIf="loading"></app-loading><div class="container">  <section class="panel">    <div class="car-info">      <img class="img" [src]="vehicle.Imagen_URL"/>      <div class="info-wrapper">        <p class="panel-title">{{ vehicleHelper.getModel(vehicle) }}</p>        <div class="info">          <span>            <p class="panel-label"> Kilometraje: <strong>{{vehicle.Kilometraje}} Km</strong></p>            <p class="panel-label"> Placa <strong>{{vehicle.Placa}}</strong></p>          </span>          <span>            <p class="panel-label">Tipo: <strong>{{ vehicleHelper.getType(vehicle) }}</strong></p>            <p class="panel-label">Estado: <strong>{{ vehicleHelper.getVehicleStatus(vehicle) }}</strong></p>          </span>        </div>      </div>    </div>    <div class="btn-container">      <app-primary-button class="button" (btnClick)="goToLogs()">        VER BITACORAS      </app-primary-button>      <app-primary-button class="button" (btnClick)="goToRequests()">        VER SOLICITUDES      </app-primary-button>    </div>  </section>  <section class="info-container">    <div class="gas-container">      <div class="first-row">        <span class="item">          <div>            <p>KPG</p>            <p class="panel-label">{{ currentMonth.kpg }}</p>          </div>          <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonth.kpg" *ngIf="currentMonthBigger(\'kpg\')"></i>          <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonth.kpg" *ngIf="!currentMonthBigger(\'kpg\')"></i>        </span>        <span class="item">          <div>            <p>CPK</p>            <p class="panel-label">L.{{ currentMonth.cpk }}</p>          </div>          <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: L.\' + lastMonth.cpk" *ngIf="currentMonthBigger(\'cpk\')"></i>          <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: L.\' + lastMonth.cpk" *ngIf="!currentMonthBigger(\'cpk\')"></i>        </span>        <span class="item">          <div>            <p>Precio</p>            <p class="panel-label">L.{{ currentMonth.cost }}</p>          </div>          <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: L.\' + lastMonth.cost" *ngIf="currentMonthBigger(\'cost\')"></i>          <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: L.\' + lastMonth.cost" *ngIf="!currentMonthBigger(\'cost\')"></i>        </span>        <span class="item">          <div>            <p>Distancia Recorrida</p>            <p class="panel-label">{{ currentMonth.kms }} KM</p>          </div>          <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonth.kms + \' Km\'" *ngIf="currentMonthBigger(\'kms\')"></i>          <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonth.kms  + \' Km\'" *ngIf="!currentMonthBigger(\'kms\')"></i>        </span>      </div>      <div class="second-row">        <div class="display">          <span class="item">            <div>              <p>Cantidad llenada</p>              <p class="panel-label">{{ currentMonth.gas }} Galon{{ currentMonth.gas > 1 ? \'es\': \'\'}}</p>            </div>            <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonth.gas" *ngIf="currentMonthBigger(\'gas\')"></i>            <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonth.gas" *ngIf="!currentMonthBigger(\'gas\')"></i>          </span>          <span>            <p>Fecha Últ. Mantenimiento</p>            <p class="panel-label">{{ date }}</p>          </span>          <span>            <p>Restante para Mantenimiento</p>            <p class="panel-label">{{ maintenanceInfo.km }} KM</p>          </span>        </div>        <div class="chart-container">          <canvas            baseChart            class="chart"            type="line"            [options]="options"            [labels]="history.months"            [datasets]="datasets"          ></canvas>        </div>      </div>    </div>    <div #map class="map"></div>  </section></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'VehicleComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'VehicleComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

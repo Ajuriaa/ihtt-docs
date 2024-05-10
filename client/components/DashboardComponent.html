@@ -1,0 +1,1447 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DashboardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/admin/containers/dashboard/dashboard.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/SideBarComponent.html" target="_self" >SideBarComponent</a></code>
+                            <code>BaseChartDirective</code>
+                                <code><a href="../components/LoadingComponent.html" target="_self" >LoadingComponent</a></code>
+                            <code>CommonModule</code>
+                            <code>BaseChartDirective</code>
+                            <code>MatTooltipModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#barOptions" >barOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cities" >cities</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cityDatasets" >cityDatasets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cityLabels" >cityLabels</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cost" >cost</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#costDatasets" >costDatasets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#costLabels" >costLabels</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentMonthInfo" >currentMonthInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#kms" >kms</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#kmsDatasets" >kmsDatasets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#kmsLabels" >kmsLabels</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lastMonthInfo" >lastMonthInfo</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#lineOptions" >lineOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#pieOptions" >pieOptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicle" >vehicle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#vehicleInfoHelper" >vehicleInfoHelper</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#currentMonthBigger" >currentMonthBigger</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#generateGraphData" >generateGraphData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goToVehicle" >goToVehicle</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dashboardQuery: <a href="../injectables/DashboardQueries.html" target="_self">DashboardQueries</a>, vehicleInfoHelper: <a href="../classes/vehicleInfoHelper.html" target="_self">vehicleInfoHelper</a>, router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:87</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dashboardQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashboardQueries.html" target="_self" >DashboardQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>vehicleInfoHelper</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentMonthBigger"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentMonthBigger</b></span>
+                        <a href="#currentMonthBigger"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>currentMonthBigger(prop: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="112"
+                                    class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:112</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>prop</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateGraphData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>generateGraphData</b></span>
+                        <a href="#generateGraphData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>generateGraphData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="128"
+                                    class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:128</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goToVehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>goToVehicle</b></span>
+                        <a href="#goToVehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>goToVehicle()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="108"
+                                    class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:108</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="barOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>barOptions</b></span>
+                        <a href="#barOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>BAR_OPTIONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cities"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cities</b></span>
+                        <a href="#cities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cityDatasets"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cityDatasets</b></span>
+                        <a href="#cityDatasets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:81</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cityLabels"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cityLabels</b></span>
+                        <a href="#cityLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cost"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cost</b></span>
+                        <a href="#cost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="costDatasets"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>costDatasets</b></span>
+                        <a href="#costDatasets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="costLabels"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>costLabels</b></span>
+                        <a href="#costLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentMonthInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>currentMonthInfo</b></span>
+                        <a href="#currentMonthInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/monthData.html" target="_self" >monthData</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:73</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kms"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>kms</b></span>
+                        <a href="#kms"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kmsDatasets"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>kmsDatasets</b></span>
+                        <a href="#kmsDatasets"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="kmsLabels"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>kmsLabels</b></span>
+                        <a href="#kmsLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastMonthInfo"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>lastMonthInfo</b></span>
+                        <a href="#lastMonthInfo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/monthData.html" target="_self" >monthData</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lineOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>lineOptions</b></span>
+                        <a href="#lineOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>LINE_OPTIONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pieOptions"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>pieOptions</b></span>
+                        <a href="#pieOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>PIE_OPTIONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicle"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicle</b></span>
+                        <a href="#vehicle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IVehicle.html" target="_self" >IVehicle</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_VEHICLE</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="vehicleInfoHelper"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>vehicleInfoHelper</b></span>
+                        <a href="#vehicleInfoHelper"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/vehicleInfoHelper.html" target="_self" >vehicleInfoHelper</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/admin/containers/dashboard/dashboard.component.ts:91</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { BaseChartDirective } from &#x27;ng2-charts&#x27;;
+import { LoadingComponent, SideBarComponent } from &#x27;src/app/shared&#x27;;
+import { EMPTY_VEHICLE } from &#x27;src/app/core/helpers&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { ChartConfiguration } from &#x27;chart.js&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { MatTooltipModule } from &#x27;@angular/material/tooltip&#x27;;
+import { vehicleInfoHelper } from &#x27;../../helpers&#x27;;
+import { IVehicle, monthData } from &#x27;../../interfaces&#x27;;
+import { DashboardQueries } from &#x27;../../services&#x27;;
+
+const PIE_OPTIONS: ChartConfiguration[&#x27;options&#x27;] &#x3D; {
+  plugins: {
+    legend: {
+      position: &#x27;bottom&#x27;,
+      fullSize: true,
+      labels: {
+        font: { size: 15 }
+      }
+    },
+    title: {
+      display: true,
+      text: &#x27;Ciudades Vistadas&#x27;,
+      font: { size: 20 }
+    }
+  }
+};
+
+const LINE_OPTIONS: ChartConfiguration[&#x27;options&#x27;] &#x3D; {
+  scales: {
+    y: { ticks: { font: {size: 20}}},
+    x: { ticks: { font: {size: 20, weight: &#x27;bold&#x27; }}}
+  },
+  plugins: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: &#x27;Total de lempiras gastados en gasolina por mes&#x27;,
+      font: { size: 20 }
+    }
+  }
+};
+
+const BAR_OPTIONS: ChartConfiguration[&#x27;options&#x27;] &#x3D; {
+  scales: {
+    y: { ticks: { font: {size: 20}}},
+    x: { ticks: { font: {size: 20, weight: &#x27;bold&#x27;}}}
+  },
+  plugins: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: &#x27;Total de kilometros recorridos por mes&#x27;,
+      font: { size: 25 }
+    }
+  }
+};
+
+@Component({
+  selector: &#x27;app-dashboard&#x27;,
+  standalone: true,
+  imports: [
+    SideBarComponent, BaseChartDirective, LoadingComponent,
+    CommonModule, BaseChartDirective, MatTooltipModule
+  ],
+  providers: [vehicleInfoHelper],
+  templateUrl: &#x27;./dashboard.component.html&#x27;,
+  styleUrl: &#x27;./dashboard.component.scss&#x27;
+})
+export class DashboardComponent implements OnInit {
+  public loading &#x3D; true;
+  public currentMonthInfo!: monthData;
+  public lastMonthInfo!: monthData;
+  public kms: { month: string; kms: number }[] &#x3D; [];
+  public cost: { month: string; cost: number }[] &#x3D; [];
+  public cities: { city: string; trips: number }[] &#x3D; [];
+  public vehicle: IVehicle &#x3D; EMPTY_VEHICLE;
+  public kmsDatasets: any[] &#x3D; [];
+  public kmsLabels: string[] &#x3D; [];
+  public cityDatasets: any[] &#x3D; [];
+  public cityLabels: string[] &#x3D; [];
+  public costDatasets: any[] &#x3D; [];
+  public costLabels: string[] &#x3D; [];
+  public pieOptions &#x3D; PIE_OPTIONS;
+  public lineOptions &#x3D; LINE_OPTIONS;
+  public barOptions &#x3D; BAR_OPTIONS;
+
+  constructor(
+    private dashboardQuery: DashboardQueries,
+    public vehicleInfoHelper: vehicleInfoHelper,
+    private router: Router
+  ){}
+
+  ngOnInit(): void {
+    this.dashboardQuery.dashboardQuery().subscribe((data) &#x3D;&gt; {
+      this.currentMonthInfo &#x3D; data.current_month;
+      this.lastMonthInfo &#x3D; data.last_month;
+      this.kms &#x3D; data.kms;
+      this.cost &#x3D; data.cost;
+      this.cities &#x3D; data.cities;
+      this.vehicle &#x3D; data.vehicle;
+      this.loading &#x3D; false;
+      this.generateGraphData();
+    });
+  }
+
+  public goToVehicle(): void {
+    this.router.navigate([&#x27;/admin/vehicle&#x27;, this.vehicle.ID_Vehiculo]);
+  }
+
+  public currentMonthBigger(prop: string): boolean {
+    switch (prop) {
+      case &#x27;gas&#x27;:
+        return this.lastMonthInfo.gas &lt; this.currentMonthInfo.gas;
+      case &#x27;cost&#x27;:
+        return this.lastMonthInfo.cost &lt; this.currentMonthInfo.cost;
+      case &#x27;kms&#x27;:
+        return this.lastMonthInfo.kms &lt; this.currentMonthInfo.kms;
+      case &#x27;trip&#x27;:
+        return this.lastMonthInfo.trips &lt; this.currentMonthInfo.trips;
+      case &#x27;request&#x27;:
+        return this.lastMonthInfo.requests &lt; this.currentMonthInfo.requests;
+    }
+    return false;
+  }
+
+  private generateGraphData(): void {
+    this.kmsDatasets &#x3D; [{ data: this.kms.map((k) &#x3D;&gt; k.kms), label: &#x27;Total de Kilometros recorridos por mes&#x27; }];
+    this.kmsLabels &#x3D; this.kms.map((k) &#x3D;&gt; k.month);
+    this.cityDatasets &#x3D; [{ data: this.cities.map((c) &#x3D;&gt; c.trips), label: &#x27;Viajes&#x27; }];
+    this.cityLabels &#x3D; this.cities.map((c) &#x3D;&gt; c.city);
+    this.costDatasets &#x3D; [{ data: this.cost.map((c) &#x3D;&gt; c.cost), fill: &#x27;origin&#x27; }];
+    this.costLabels &#x3D; this.cost.map((c) &#x3D;&gt; c.month);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-loading *ngIf&#x3D;&quot;loading&quot; class&#x3D;&quot;loading&quot;&gt;&lt;/app-loading&gt;
+&lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;!loading&quot;&gt;
+  &lt;section class&#x3D;&quot;panel&quot;&gt;
+    &lt;span class&#x3D;&quot;item&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Gasolina&lt;/p&gt;
+        &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonthInfo.gas.toFixed(2) }} Galon{{ currentMonthInfo.gas &gt; 1 ? &#x27;es&#x27;: &#x27;&#x27;}}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.gas.toFixed(2)&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;gas&#x27;)&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.gas.toFixed(2)&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;gas&#x27;)&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;item&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Giras&lt;/p&gt;
+        &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonthInfo.trips }}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.trips&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;trip&#x27;)&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.trips&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;trip&#x27;)&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;item&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Costo&lt;/p&gt;
+        &lt;p class&#x3D;&quot;panel-label&quot;&gt;L.{{ currentMonthInfo.cost }}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonthInfo.cost&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;cost&#x27;)&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: L.&#x27; + lastMonthInfo.cost&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;cost&#x27;)&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;item&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Solicitudes&lt;/p&gt;
+        &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonthInfo.requests }}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.requests&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;request&#x27;)&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.requests&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;request&#x27;)&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+    &lt;span class&#x3D;&quot;item&quot;&gt;
+      &lt;div&gt;
+        &lt;p&gt;Kilometros Recorridos&lt;/p&gt;
+        &lt;p class&#x3D;&quot;panel-label&quot;&gt;{{ currentMonthInfo.kms }} Kilometros&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-up up&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.kms + &#x27; Km&#x27;&quot; *ngIf&#x3D;&quot;currentMonthBigger(&#x27;kms&#x27;)&quot;&gt;&lt;/i&gt;
+      &lt;i class&#x3D;&quot;uil uil-arrow-circle-down down&quot; [matTooltip]&#x3D;&quot;&#x27;Mes Pasado: &#x27; + lastMonthInfo.kms + &#x27; Km&#x27;&quot; *ngIf&#x3D;&quot;!currentMonthBigger(&#x27;kms&#x27;)&quot;&gt;&lt;/i&gt;
+    &lt;/span&gt;
+  &lt;/section&gt;
+  &lt;section class&#x3D;&quot;info-container&quot;&gt;
+    &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+      &lt;canvas baseChart class&#x3D;&quot;chart&quot;
+        [datasets]&#x3D;&quot;kmsDatasets&quot;
+        [options]&#x3D;&quot;barOptions&quot;
+        [labels]&#x3D;&quot;kmsLabels&quot;
+        type&#x3D;&quot;bar&quot;
+      &gt;
+      &lt;/canvas&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;pie-container&quot;&gt;
+      &lt;canvas baseChart class&#x3D;&quot;chart&quot;
+        [datasets]&#x3D;&quot;cityDatasets&quot;
+        [options]&#x3D;&quot;pieOptions&quot;
+        [labels]&#x3D;&quot;cityLabels&quot;
+        type&#x3D;&quot;pie&quot;
+      &gt;
+      &lt;/canvas&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;chart-container&quot;&gt;
+      &lt;div class&#x3D;&quot;line-graph&quot;&gt;
+        &lt;canvas baseChart class&#x3D;&quot;chart&quot;
+          [datasets]&#x3D;&quot;costDatasets&quot;
+          [options]&#x3D;&quot;lineOptions&quot;
+          [labels]&#x3D;&quot;costLabels&quot;
+          type&#x3D;&quot;line&quot;
+        &gt;
+        &lt;/canvas&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;car&quot; (click)&#x3D;&quot;goToVehicle()&quot;&gt;
+        &lt;img class&#x3D;&quot;img&quot; [src]&#x3D;&quot;vehicle.Imagen_URL&quot; alt&#x3D;&quot;Car&quot;&gt;
+        &lt;span class&#x3D;&quot;labels&quot;&gt;
+          &lt;p class&#x3D;&quot;title&quot;&gt;Vehículo más usado del mes&lt;/p&gt;
+          &lt;p&gt;{{ vehicleInfoHelper.getModel(vehicle) }}&lt;/p&gt;
+        &lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-loading *ngIf="loading" class="loading"></app-loading><div class="container" *ngIf="!loading">  <section class="panel">    <span class="item">      <div>        <p>Gasolina</p>        <p class="panel-label">{{ currentMonthInfo.gas.toFixed(2) }} Galon{{ currentMonthInfo.gas > 1 ? \'es\': \'\'}}</p>      </div>      <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.gas.toFixed(2)" *ngIf="currentMonthBigger(\'gas\')"></i>      <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.gas.toFixed(2)" *ngIf="!currentMonthBigger(\'gas\')"></i>    </span>    <span class="item">      <div>        <p>Giras</p>        <p class="panel-label">{{ currentMonthInfo.trips }}</p>      </div>      <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.trips" *ngIf="currentMonthBigger(\'trip\')"></i>      <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.trips" *ngIf="!currentMonthBigger(\'trip\')"></i>    </span>    <span class="item">      <div>        <p>Costo</p>        <p class="panel-label">L.{{ currentMonthInfo.cost }}</p>      </div>      <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: L.\' + lastMonthInfo.cost" *ngIf="currentMonthBigger(\'cost\')"></i>      <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: L.\' + lastMonthInfo.cost" *ngIf="!currentMonthBigger(\'cost\')"></i>    </span>    <span class="item">      <div>        <p>Solicitudes</p>        <p class="panel-label">{{ currentMonthInfo.requests }}</p>      </div>      <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.requests" *ngIf="currentMonthBigger(\'request\')"></i>      <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.requests" *ngIf="!currentMonthBigger(\'request\')"></i>    </span>    <span class="item">      <div>        <p>Kilometros Recorridos</p>        <p class="panel-label">{{ currentMonthInfo.kms }} Kilometros</p>      </div>      <i class="uil uil-arrow-circle-up up" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.kms + \' Km\'" *ngIf="currentMonthBigger(\'kms\')"></i>      <i class="uil uil-arrow-circle-down down" [matTooltip]="\'Mes Pasado: \' + lastMonthInfo.kms + \' Km\'" *ngIf="!currentMonthBigger(\'kms\')"></i>    </span>  </section>  <section class="info-container">    <div class="chart-container">      <canvas baseChart class="chart"        [datasets]="kmsDatasets"        [options]="barOptions"        [labels]="kmsLabels"        type="bar"      >      </canvas>    </div>    <div class="pie-container">      <canvas baseChart class="chart"        [datasets]="cityDatasets"        [options]="pieOptions"        [labels]="cityLabels"        type="pie"      >      </canvas>    </div>    <div class="chart-container">      <div class="line-graph">        <canvas baseChart class="chart"          [datasets]="costDatasets"          [options]="lineOptions"          [labels]="costLabels"          type="line"        >        </canvas>      </div>      <div class="car" (click)="goToVehicle()">        <img class="img" [src]="vehicle.Imagen_URL" alt="Car">        <span class="labels">          <p class="title">Vehículo más usado del mes</p>          <p>{{ vehicleInfoHelper.getModel(vehicle) }}</p>        </span>      </div>    </div>  </section></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

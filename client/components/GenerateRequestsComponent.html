@@ -1,0 +1,1860 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vehicle-fleet-system documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">vehicle-fleet-system documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  GenerateRequestsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/public/components/generate-requests/generate-requests.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../classes/NameHelper.html" target="_self" >NameHelper</a></code>
+                                <code><a href="../classes/cookieHelper.html" target="_self" >cookieHelper</a></code>
+                            <code>provideNativeDateAdapter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-generate-requests</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/PrimaryButtonComponent.html" target="_self" >PrimaryButtonComponent</a></code>
+                            <code>MatFormFieldModule</code>
+                            <code>MatAutocompleteModule</code>
+                            <code>FormsModule</code>
+                            <code>MatCheckboxModule</code>
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                            <code>MatInputModule</code>
+                            <code>MatSelectModule</code>
+                            <code>MatDatepickerModule</code>
+                            <code>AsyncPipe</code>
+                            <code>NgxMaterialTimepickerModule</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./generate-requests.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./generate-requests.component.scss</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#cities" >cities</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#employee" >employee</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#employees" >employees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#error" >error</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredCities" >filteredCities</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filteredEmployees" >filteredEmployees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#input" >input</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#noUser" >noUser</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#request" >request</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#requestCreated" >requestCreated</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#requestForm" >requestForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#requestTypes" >requestTypes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedCity" >selectedCity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedEmployees" >selectedEmployees</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showForm" >showForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkControlsEmpty" >checkControlsEmpty</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#display" >display</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchData" >fetchData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getId" >getId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getRequestType" >getRequestType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isPassengerSelected" >isPassengerSelected</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectCity" >selectCity</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#toggleSelection" >toggleSelection</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: FormBuilder, searchEngine: <a href="../injectables/SearchService.html" target="_self">SearchService</a>, publicQuery: <a href="../injectables/PublicQueries.html" target="_self">PublicQueries</a>, publicMutation: <a href="../injectables/PublicMutations.html" target="_self">PublicMutations</a>, nameHelper: <a href="../classes/NameHelper.html" target="_self">NameHelper</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>searchEngine</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>publicQuery</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PublicQueries.html" target="_self" >PublicQueries</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>publicMutation</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PublicMutations.html" target="_self" >PublicMutations</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>nameHelper</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/NameHelper.html" target="_self" >NameHelper</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkControlsEmpty"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>checkControlsEmpty</b></span>
+                        <a href="#checkControlsEmpty"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkControlsEmpty()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="162"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:162</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="display"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>display</b></span>
+                        <a href="#display"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>display()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="96"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:96</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fetchData</b></span>
+                        <a href="#fetchData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="169"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:169</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getId"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>getId</b></span>
+                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getId()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRequestType"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getRequestType</b></span>
+                        <a href="#getRequestType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRequestType()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IRequestType.html" target="_self" >IRequestType</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPassengerSelected"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isPassengerSelected</b></span>
+                        <a href="#isPassengerSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isPassengerSelected(user: <a href="../interfaces/IUser.html" target="_self">IUser</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="83"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCity"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectCity</b></span>
+                        <a href="#selectCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>selectCity(city: <a href="../interfaces/ICity.html" target="_self">ICity</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="150"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:150</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>city</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ICity.html" target="_self" >ICity</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleSelection"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>toggleSelection</b></span>
+                        <a href="#toggleSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>toggleSelection(user: <a href="../interfaces/IUser.html" target="_self">IUser</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>user</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cities"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>cities</b></span>
+                        <a href="#cities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#City" target="_self" >ICity[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="employee"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>employee</b></span>
+                        <a href="#employee"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_USER</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="employees"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>employees</b></span>
+                        <a href="#employees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IUser[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="error"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>error</b></span>
+                        <a href="#error"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredCities"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredCities</b></span>
+                        <a href="#filteredCities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#City" target="_self" >Observable&lt;ICity[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:48</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filteredEmployees"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>filteredEmployees</b></span>
+                        <a href="#filteredEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;IUser[]&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="input"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>input</b></span>
+                        <a href="#input"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noUser"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>noUser</b></span>
+                        <a href="#noUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="request"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>request</b></span>
+                        <a href="#request"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IRequest.html" target="_self" >IRequest</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_REQUEST</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:49</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestCreated"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>requestCreated</b></span>
+                        <a href="#requestCreated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestForm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>requestForm</b></span>
+                        <a href="#requestForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="requestTypes"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>requestTypes</b></span>
+                        <a href="#requestTypes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IRequestType[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedCity"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedCity</b></span>
+                        <a href="#selectedCity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICity.html" target="_self" >ICity</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>EMPTY_CITY</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:50</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedEmployees"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>selectedEmployees</b></span>
+                        <a href="#selectedEmployees"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IUser[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:47</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showForm"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>showForm</b></span>
+                        <a href="#showForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/public/components/generate-requests/generate-requests.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { map, Observable, startWith } from &#x27;rxjs&#x27;;
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from &#x27;@angular/forms&#x27;;
+import { SearchService } from &#x27;src/app/core/services&#x27;;
+import { NameHelper } from &#x27;src/app/admin/helpers&#x27;;
+import { AsyncPipe, CommonModule } from &#x27;@angular/common&#x27;;
+import { MatAutocompleteModule } from &#x27;@angular/material/autocomplete&#x27;;
+import { MatCheckboxModule } from &#x27;@angular/material/checkbox&#x27;;
+import { MatFormFieldModule } from &#x27;@angular/material/form-field&#x27;;
+import { MatInputModule } from &#x27;@angular/material/input&#x27;;
+import { PrimaryButtonComponent } from &#x27;src/app/shared&#x27;;
+import { MatSelectModule } from &#x27;@angular/material/select&#x27;;
+import { cookieHelper, EMPTY_CITY, EMPTY_REQUEST, EMPTY_USER } from &#x27;src/app/core/helpers&#x27;;
+import { City, Model } from &#x27;src/app/core/enums&#x27;;
+import { MatDatepickerModule } from &#x27;@angular/material/datepicker&#x27;;
+import { NgxMaterialTimepickerModule } from &#x27;ngx-material-timepicker&#x27;;
+import { provideNativeDateAdapter } from &#x27;@angular/material/core&#x27;;
+import moment from &#x27;moment&#x27;;
+import { PublicMutations, PublicQueries } from &#x27;../../services&#x27;;
+import { ICity, IRequest, IRequestType, IUser } from &#x27;../../interfaces&#x27;;
+
+@Component({
+  selector: &#x27;app-generate-requests&#x27;,
+  standalone: true,
+  imports: [
+    PrimaryButtonComponent, MatFormFieldModule, MatAutocompleteModule,
+    FormsModule, MatCheckboxModule, CommonModule, ReactiveFormsModule,
+    MatInputModule, MatSelectModule, MatDatepickerModule, AsyncPipe,
+    NgxMaterialTimepickerModule
+  ],
+  providers: [NameHelper, cookieHelper, provideNativeDateAdapter()],
+  templateUrl: &#x27;./generate-requests.component.html&#x27;,
+  styleUrl: &#x27;./generate-requests.component.scss&#x27;
+})
+export class GenerateRequestsComponent implements OnInit {
+  public cities: ICity[] &#x3D; [];
+  public requestTypes: IRequestType[] &#x3D; [];
+  public employees: IUser[] &#x3D; [];
+  public employee: IUser &#x3D; EMPTY_USER;
+  public filteredEmployees!: Observable&lt;IUser[]&gt;;
+  public requestForm!: FormGroup;
+  public input &#x3D; &#x27;&#x27;;
+  public id &#x3D; 0;
+  public error &#x3D; false;
+  public noUser &#x3D; false;
+  public showForm &#x3D; false;
+  public selectedEmployees: IUser[] &#x3D; [];
+  public filteredCities!: Observable&lt;ICity[]&gt;;
+  public request: IRequest &#x3D; EMPTY_REQUEST;
+  public selectedCity: ICity &#x3D; EMPTY_CITY;
+  public requestCreated &#x3D; false;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private searchEngine: SearchService,
+    private publicQuery: PublicQueries,
+    private publicMutation: PublicMutations,
+    private nameHelper: NameHelper
+  ){}
+
+  ngOnInit(): void {
+    this.fetchData();
+    this.requestForm &#x3D; this.formBuilder.group({
+      city: [&#x27;&#x27;, Validators.required],
+      type: [&#x27;&#x27;, Validators.required],
+      employees: [&#x27;&#x27;],
+      reason: [&#x27;&#x27;, Validators.required],
+      destination: [&#x27;&#x27;, Validators.required],
+      date: [&#x27;&#x27;, Validators.required],
+      departureTime: [&#x27;&#x27;, Validators.required],
+      returnTime: [&#x27;&#x27;, Validators.required]
+    });
+    this.filteredEmployees &#x3D; this.requestForm.controls.employees.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this.searchEngine.filterData(this.employees, value.toString(), Model.user)),
+    );
+    this.filteredCities &#x3D; this.requestForm.controls.city.valueChanges.pipe(
+      startWith(&#x27;&#x27;),
+      map(value &#x3D;&gt; this.searchEngine.filterData(this.cities, value.toString(), Model.city)),
+    );
+  }
+
+  public isPassengerSelected(user: IUser): boolean {
+    return this.selectedEmployees.includes(user);
+  }
+
+  public toggleSelection(user: IUser): void {
+    if (this.selectedEmployees.includes(user)) {
+      const index &#x3D; this.selectedEmployees.indexOf(user);
+      this.selectedEmployees.splice(index, 1);
+    } else {
+      this.selectedEmployees.push(user);
+    }
+  }
+
+  public display(): string {
+    const names &#x3D; this.selectedEmployees.map((passenger) &#x3D;&gt; {
+      return this.nameHelper.getShortName(passenger.Nombres + &quot; &quot; + passenger.Apellidos);
+    });
+    return names.join(&#x27;, &#x27;);
+  }
+
+  public async onSubmit(): Promise&lt;void&gt; {
+    const incompleteForm &#x3D; this.checkControlsEmpty();
+
+    if (incompleteForm) {
+      this.error &#x3D; true;
+      return;
+    }
+
+    const data &#x3D; {
+      ID_Solicitud: 0,
+      ID_Empleado: this.id,
+      Destino: this.requestForm.controls.destination.value,
+      Motivo: this.requestForm.controls.reason.value,
+      Fecha: this.requestForm.controls.date.value,
+      Hora_Salida: moment(this.requestForm.controls.departureTime.value, &#x27;h:mm A&#x27;).toISOString(),
+      Hora_Regreso: moment(this.requestForm.controls.returnTime.value, &#x27;h:mm A&#x27;).toISOString(),
+      Ciudad: this.selectedCity,
+      Tipo_Solicitud: this.getRequestType(),
+      Pasajeros: this.selectedEmployees.map((passenger) &#x3D;&gt; passenger.ID_Empleado).join(&#x27;,&#x27;)
+    };
+
+    const mutationResponse &#x3D; await this.publicMutation.createRequest(data);
+
+    if (mutationResponse) {
+      this.requestCreated &#x3D; true;
+    }
+  }
+
+  public getId(): void {
+    this.error &#x3D; false;
+    this.noUser &#x3D; false;
+
+    if(this.input &#x3D;&#x3D;&#x3D; &#x27;&#x27; || this.input &#x3D;&#x3D;&#x3D; null) {
+      this.error &#x3D; true;
+      return;
+    }
+    if(this.employees.find(employee &#x3D;&gt; employee.ID_Empleado &#x3D;&#x3D;&#x3D; +this.input) &#x3D;&#x3D;&#x3D; undefined ){
+      this.noUser &#x3D; true;
+      return;
+    }
+    this.id &#x3D; +this.input;
+    this.employee &#x3D; this.employees.find(employee &#x3D;&gt; employee.ID_Empleado &#x3D;&#x3D;&#x3D; this.id) || EMPTY_USER;
+    this.selectedEmployees.push(this.employee);
+    this.showForm &#x3D; true;
+    this.error &#x3D; false;
+  }
+
+  public selectCity(city: ICity): void {
+    this.selectedCity &#x3D; city;
+
+    const typeControl &#x3D; this.requestForm.controls.type;
+    this.selectedCity.Nombre &#x3D;&#x3D;&#x3D; City.TGU ? typeControl.setValue(&#x27;Interna&#x27;) : typeControl.setValue(&#x27;Externa&#x27;);
+  }
+
+  private getRequestType(): IRequestType {
+    const type &#x3D; this.requestForm.controls.type.value;
+    return this.requestTypes.find(requestType &#x3D;&gt; requestType.Tipo_Solicitud &#x3D;&#x3D;&#x3D; type) || this.requestTypes[0];
+  }
+
+  private checkControlsEmpty(): boolean {
+    return Object.keys(this.requestForm.controls).some(controlName &#x3D;&gt; {
+      const control &#x3D; this.requestForm.controls[controlName];
+      return control.errors &amp;&amp; control.errors.required &amp;&amp; control.value &#x3D;&#x3D;&#x3D; &#x27;&#x27;;
+    });
+  }
+
+  private fetchData(): void {
+    this.publicQuery.getCities().subscribe(({ data }) &#x3D;&gt; {
+      this.cities &#x3D; data;
+    });
+    this.publicQuery.getRequestTypes().subscribe(({ data }) &#x3D;&gt; {
+      this.requestTypes &#x3D; data;
+    });
+    this.publicQuery.getAllUsers().subscribe(({ data }) &#x3D;&gt; {
+      this.employees &#x3D; data;
+    });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;!requestCreated&quot;&gt;
+  &lt;p class&#x3D;&quot;title&quot;&gt;Generar Solicitud de Vehículo&lt;/p&gt;
+  &lt;mat-form-field *ngIf&#x3D;&quot;!showForm&quot; class&#x3D;&quot;id-field&quot;&gt;
+    &lt;mat-label&gt;Número de empleado&lt;/mat-label&gt;
+    &lt;input
+      matInput
+      type&#x3D;&quot;number&quot;
+      [(ngModel)]&#x3D;&quot;input&quot;
+      placeholder&#x3D;&quot;Ingrese su número de empleado&quot;
+    /&gt;
+  &lt;/mat-form-field&gt;
+  &lt;app-primary-button class&#x3D;&quot;alone-btn&quot; *ngIf&#x3D;&quot;!showForm&quot; (btnClick)&#x3D;&quot;getId()&quot;&gt;SIGUIENTE&lt;/app-primary-button&gt;
+  &lt;form *ngIf&#x3D;&quot;showForm&quot; [formGroup]&#x3D;&quot;requestForm&quot; class&#x3D;&quot;form&quot;&gt;
+
+    &lt;div class&#x3D;&quot;form-row&quot;&gt;
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label&gt;Escoge la fecha&lt;/mat-label&gt;
+        &lt;input formControlName&#x3D;&quot;date&quot; matInput [matDatepicker]&#x3D;&quot;picker&quot; required&gt;
+        &lt;mat-hint&gt;DD/MM/YYYY&lt;/mat-hint&gt;
+        &lt;mat-datepicker-toggle matIconSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+        &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label class&#x3D;&quot;label&quot;&gt;Tipo de Gira&lt;/mat-label&gt;
+        &lt;input
+          matInput
+          required
+          readonly
+          formControlName&#x3D;&quot;type&quot;
+          placeholder&#x3D;&quot;Seleccione la ciudad&quot;
+        &gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label class&#x3D;&quot;label&quot;&gt;Ciudad&lt;/mat-label&gt;
+        &lt;input
+          matInput
+          required
+          [matAutocomplete]&#x3D;&quot;autoCity&quot;
+          formControlName&#x3D;&quot;city&quot;
+          placeholder&#x3D;&quot;Ingrese la ciudad&quot;
+        &gt;
+        &lt;mat-autocomplete #autoCity&#x3D;&quot;matAutocomplete&quot;&gt;
+          @for (city of filteredCities | async; track city.ID_Ciudad) {
+            &lt;mat-option [value]&#x3D;&quot;city.Nombre&quot; (click)&#x3D;&quot;selectCity(city)&quot;&gt;
+              {{ city.Nombre }}
+            &lt;/mat-option&gt;
+          }
+        &lt;/mat-autocomplete&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label class&#x3D;&quot;label&quot;&gt;Destino&lt;/mat-label&gt;
+        &lt;input
+          matInput
+          required
+          class&#x3D;&quot;input&quot;
+          formControlName&#x3D;&quot;destination&quot;
+          placeholder&#x3D;&quot;Ingrese el destino de la gira&quot;
+        &gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;form-row&quot;&gt;
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label class&#x3D;&quot;label&quot;&gt;Motivo&lt;/mat-label&gt;
+        &lt;input
+          matInput
+          required
+          class&#x3D;&quot;input&quot;
+          formControlName&#x3D;&quot;reason&quot;
+          placeholder&#x3D;&quot;Ingrese el destino de la gira&quot;
+        &gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;input
+          matInput
+          required
+          readonly
+          placeholder&#x3D;&quot;Hora Salida&quot;
+          class&#x3D;&quot;input pointer&quot;
+          formControlName&#x3D;&quot;departureTime&quot;
+          [ngxTimepicker]&#x3D;&quot;timeIn&quot;
+        &gt;
+        &lt;ngx-material-timepicker #timeIn&gt;&lt;/ngx-material-timepicker&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;input
+          matInput
+          required
+          readonly
+          placeholder&#x3D;&quot;Hora Entrada&quot;
+          class&#x3D;&quot;input&quot;
+          formControlName&#x3D;&quot;returnTime&quot;
+          [ngxTimepicker]&#x3D;&quot;timeOut&quot;
+        &gt;
+        &lt;ngx-material-timepicker #timeOut&gt;&lt;/ngx-material-timepicker&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-form-field class&#x3D;&quot;field&quot;&gt;
+        &lt;mat-label&gt;Pasajeros&lt;/mat-label&gt;
+        &lt;input
+          [matAutocomplete]&#x3D;&quot;autoUsers&quot;
+          matInput
+          type&#x3D;&quot;text&quot;
+          [placeholder]&#x3D;&quot;display()&quot;
+          formControlName&#x3D;&quot;employees&quot;
+        &gt;
+        &lt;mat-hint&gt;Busque los empleados por nombre o número&lt;/mat-hint&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;mat-autocomplete #autoUsers&#x3D;&quot;matAutocomplete&quot;&gt;
+        &lt;mat-option *ngFor&#x3D;&quot;let passenger of filteredEmployees | async&quot; value&#x3D;&quot;&quot;&gt;
+            &lt;mat-checkbox
+              [checked]&#x3D;&quot;isPassengerSelected(passenger)&quot;
+              (click)&#x3D;&quot;toggleSelection(passenger)&quot;
+            &gt;
+              {{ passenger.Nombres }} {{ passenger.Apellidos }}
+            &lt;/mat-checkbox&gt;
+        &lt;/mat-option&gt;
+      &lt;/mat-autocomplete&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;error&quot;&gt;Llene todos los campos requeridos&lt;/mat-error&gt;
+  &lt;mat-error class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;noUser&quot;&gt;No existe un usuario con ese ID&lt;/mat-error&gt;
+  &lt;div class&#x3D;&quot;buttons&quot; *ngIf&#x3D;&quot;showForm&quot;&gt;
+    &lt;app-primary-button class&#x3D;&quot;btn&quot; (btnClick)&#x3D;&quot;onSubmit()&quot;&gt;ENVIAR&lt;/app-primary-button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;container&quot; *ngIf&#x3D;&quot;requestCreated&quot;&gt;
+  &lt;p class&#x3D;&quot;created-label&quot;&gt;Solicitud creada Correctamente!&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container" *ngIf="!requestCreated">  <p class="title">Generar Solicitud de Vehículo</p>  <mat-form-field *ngIf="!showForm" class="id-field">    <mat-label>Número de empleado</mat-label>    <input      matInput      type="number"      [(ngModel)]="input"      placeholder="Ingrese su número de empleado"    />  </mat-form-field>  <app-primary-button class="alone-btn" *ngIf="!showForm" (btnClick)="getId()">SIGUIENTE</app-primary-button>  <form *ngIf="showForm" [formGroup]="requestForm" class="form">    <div class="form-row">      <mat-form-field class="field">        <mat-label>Escoge la fecha</mat-label>        <input formControlName="date" matInput [matDatepicker]="picker" required>        <mat-hint>DD/MM/YYYY</mat-hint>        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>        <mat-datepicker #picker></mat-datepicker>      </mat-form-field>      <mat-form-field class="field">        <mat-label class="label">Tipo de Gira</mat-label>        <input          matInput          required          readonly          formControlName="type"          placeholder="Seleccione la ciudad"        >      </mat-form-field>      <mat-form-field class="field">        <mat-label class="label">Ciudad</mat-label>        <input          matInput          required          [matAutocomplete]="autoCity"          formControlName="city"          placeholder="Ingrese la ciudad"        >        <mat-autocomplete #autoCity="matAutocomplete">          @for (city of filteredCities | async; track city.ID_Ciudad) {            <mat-option [value]="city.Nombre" (click)="selectCity(city)">              {{ city.Nombre }}            </mat-option>          }        </mat-autocomplete>      </mat-form-field>      <mat-form-field class="field">        <mat-label class="label">Destino</mat-label>        <input          matInput          required          class="input"          formControlName="destination"          placeholder="Ingrese el destino de la gira"        >      </mat-form-field>    </div>    <div class="form-row">      <mat-form-field class="field">        <mat-label class="label">Motivo</mat-label>        <input          matInput          required          class="input"          formControlName="reason"          placeholder="Ingrese el destino de la gira"        >      </mat-form-field>      <mat-form-field class="field">        <input          matInput          required          readonly          placeholder="Hora Salida"          class="input pointer"          formControlName="departureTime"          [ngxTimepicker]="timeIn"        >        <ngx-material-timepicker #timeIn></ngx-material-timepicker>      </mat-form-field>      <mat-form-field class="field">        <input          matInput          required          readonly          placeholder="Hora Entrada"          class="input"          formControlName="returnTime"          [ngxTimepicker]="timeOut"        >        <ngx-material-timepicker #timeOut></ngx-material-timepicker>      </mat-form-field>      <mat-form-field class="field">        <mat-label>Pasajeros</mat-label>        <input          [matAutocomplete]="autoUsers"          matInput          type="text"          [placeholder]="display()"          formControlName="employees"        >        <mat-hint>Busque los empleados por nombre o número</mat-hint>      </mat-form-field>      <mat-autocomplete #autoUsers="matAutocomplete">        <mat-option *ngFor="let passenger of filteredEmployees | async" value="">            <mat-checkbox              [checked]="isPassengerSelected(passenger)"              (click)="toggleSelection(passenger)"            >              {{ passenger.Nombres }} {{ passenger.Apellidos }}            </mat-checkbox>        </mat-option>      </mat-autocomplete>    </div>  </form>  <mat-error class="error" *ngIf="error">Llene todos los campos requeridos</mat-error>  <mat-error class="error" *ngIf="noUser">No existe un usuario con ese ID</mat-error>  <div class="buttons" *ngIf="showForm">    <app-primary-button class="btn" (btnClick)="onSubmit()">ENVIAR</app-primary-button>  </div></div><div class="container" *ngIf="requestCreated">  <p class="created-label">Solicitud creada Correctamente!</p></div></div>'
+    var COMPONENTS = [{'name': 'AddLogComponent', 'selector': 'app-add-log'},{'name': 'AdminRouterComponent', 'selector': 'app-admin-router'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ConfirmComponentComponent', 'selector': 'app-confirm-component'},{'name': 'CreateBrandComponent', 'selector': 'app-create-brand'},{'name': 'CreateLogComponent', 'selector': 'app-create-log'},{'name': 'CreateMaintenanceComponent', 'selector': 'app-create-maintenance'},{'name': 'CreateModelComponent', 'selector': 'app-create-model'},{'name': 'CreateUpdateDriverComponent', 'selector': 'app-create-update-driver'},{'name': 'CreateUpdateVehicleComponent', 'selector': 'app-create-update-vehicle'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DeleteDriverComponent', 'selector': 'app-delete-driver'},{'name': 'DeleteVehicleComponent', 'selector': 'app-delete-vehicle'},{'name': 'DriverComponent', 'selector': 'app-driver'},{'name': 'DriversComponent', 'selector': 'app-drivers'},{'name': 'FileDropComponent', 'selector': 'app-file-drop'},{'name': 'FuelCardComponent', 'selector': 'app-fuel-card'},{'name': 'GasComponent', 'selector': 'app-gas'},{'name': 'GasInfoComponent', 'selector': 'app-gas-info'},{'name': 'GenerateRequestsComponent', 'selector': 'app-generate-requests'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingComponent', 'selector': 'app-loading'},{'name': 'LogComponent', 'selector': 'app-log'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogsComponent', 'selector': 'app-logs'},{'name': 'MaintenanceComponent', 'selector': 'app-maintenance'},{'name': 'NoResultComponent', 'selector': 'app-no-result'},{'name': 'PrimaryButtonComponent', 'selector': 'app-primary-button'},{'name': 'RequestComponent', 'selector': 'app-request'},{'name': 'RequestsComponent', 'selector': 'app-requests'},{'name': 'ShowAddPassengersComponent', 'selector': 'app-show-add-passengers'},{'name': 'SideBarComponent', 'selector': 'app-side-bar'},{'name': 'SideNavButtonComponent', 'selector': 'app-side-nav-button'},{'name': 'UpdateRequestComponent', 'selector': 'app-update-request'},{'name': 'VehicleCardComponent', 'selector': 'app-vehicle-card'},{'name': 'VehicleComponent', 'selector': 'app-vehicle'},{'name': 'VehiclesComponent', 'selector': 'app-vehicles'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'GenerateRequestsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'GenerateRequestsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
