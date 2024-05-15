@@ -209,7 +209,7 @@
 
 /** 
  * 
- * @api {Get} url/cities Get Cities
+ * @api {GET} url/cities Get Cities
  * @apiDescription Get all cities information
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -263,7 +263,7 @@
 
 /**
  * 
- * @api {Get} url/driver/:id Get Driver
+ * @api {GET} url/driver/:id Get Driver
  * @apiDescription Get driver information by ID.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -273,7 +273,7 @@
 
 /** 
  * 
- * @api {Get} url/drivers Get Drivers
+ * @api {GET} url/drivers Get Drivers
  * @apiDescription Get all drivers information
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -309,7 +309,7 @@
  */
 
 /**
- * @api {Get} url/logs/:id Get Vehicle Logs
+ * @api {GET} url/logs/:id Get Vehicle Logs
  * @apiDescription Get vehicle logs by vehicle id.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -318,7 +318,7 @@
  */
 
 /**
- * @api {Get} url/users Get Users
+ * @api {GET} url/users Get Users
  * @apiDescription Get all users.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -326,7 +326,7 @@
  */
 
 /**
- * @api {Get} url/gas-units Get Gas Units
+ * @api {GET} url/gas-units Get Gas Units
  * @apiDescription Get all gas units.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -344,7 +344,7 @@
 
 /**
  * 
- * @api {Get} url/maintenances Get Maintenances
+ * @api {GET} url/maintenances Get Maintenances
  * @apiDescription Get all maintenances.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -395,10 +395,20 @@
  * @apiSuccess {Boolean} Success
  * @apiDescription This function accepts a request.
  *
+*/
+
+/**
+ * @api {GET} url/request-list/:id Get Request List
+ * @apiGroup Queries
+ * @apiVersion 1.0.0
+ * @apiParam {String} id Boss ID.
+ * @apiSuccess {Object[]} Request Requests array containing request's information.
+ * @apiDescription This function gets the bosses request's list.
+ *
  */
 
 /**
- * @api {Get} url/requests Get Requests
+ * @api {GET} url/requests Get Requests
  * @apiDescription Get all requests.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -407,7 +417,7 @@
  */
 
 /**
- * @api {Get} url/requests/:id Get Vehicle Requests
+ * @api {GET} url/requests/:id Get Vehicle Requests
  * @apiDescription Get vehicle requests by vehicle id.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -416,7 +426,7 @@
  */
 
 /**
- * @api {Get} url/request/:id Get Request
+ * @api {GET} url/request/:id Get Request
  * @apiDescription Get request by id.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -425,7 +435,7 @@
  */
 
 /**
- * @api {Get} url/request-types Get Request Types
+ * @api {GET} url/request-types Get Request Types
  * @apiDescription Get all request types.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -435,7 +445,7 @@
 
 /**
  * 
- * @api {Get} url//available-request/:id Get Available For Request
+ * @api {GET} url/available-request/:id Get Available For Request
  * @apiDescription Get available drivers and vehicles for a request.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -446,7 +456,7 @@
  */
 
 /**
- * @api {Get} url/request-status Get Request Status
+ * @api {GET} url/request-status Get Request Status
  * @apiDescription Get all request status.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -505,7 +515,7 @@
 
 /**
  * 
- * @api {Get} url/vehicle/:id Get Vehicle
+ * @api {GET} url/vehicle/:id Get Vehicle
  * @apiDescription Get vehicle by id.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -515,7 +525,7 @@
 
 /**
  * 
- * @api {Get} url/vehicles Get Vehicles
+ * @api {GET} url/vehicles Get Vehicles
  * @apiDescription Get all vehicles.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -524,7 +534,7 @@
 
 /**
  * 
- * @api {Get} url/vehicle-models Get Vehicle Models
+ * @api {GET} url/vehicle-models Get Vehicle Models
  * @apiDescription Get all vehicle models.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -533,7 +543,7 @@
 
 /**
  * 
- * @api {Get} url/vehicle-states Get Vehicle Statuses
+ * @api {GET} url/vehicle-states Get Vehicle Statuses
  * @apiDescription Get all vehicle statuses.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -542,7 +552,7 @@
 
 /**
  * 
- * @api {Get} url/vehicle-types Get Vehicle Types
+ * @api {GET} url/vehicle-types Get Vehicle Types
  * @apiDescription Get all vehicle types.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -551,7 +561,7 @@
 
 /**
  * 
- * @api {Get} url/vehicle-brands Get Vehicle Brands
+ * @api {GET} url/vehicle-brands Get Vehicle Brands
  * @apiDescription Get all vehicle brands.
  * @apiVersion 1.0.0
  * @apiGroup Queries
@@ -560,7 +570,7 @@
 
 /**
  *
- * @api {Get} url/vehicle-info/:id Get Vehicle Info
+ * @api {GET} url/vehicle-info/:id Get Vehicle Info
  * @apiDescription Get vehicle info.
  * @apiVersion 1.0.0
  * @apiGroup Queries
